@@ -10,6 +10,9 @@ const About = () => {
   const fullText = 'Más de 40 años\nprotegiendo tu patrimonio.';
 
   useEffect(() => {
+    // Ajustar threshold y rootMargin para móviles
+    const isMobile = window.innerWidth <= 480;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,8 +23,8 @@ const About = () => {
         });
       },
       {
-        threshold: 0.3,
-        rootMargin: '-100px'
+        threshold: isMobile ? 0.1 : 0.3,
+        rootMargin: isMobile ? '0px' : '-100px'
       }
     );
 

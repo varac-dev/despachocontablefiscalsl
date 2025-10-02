@@ -383,6 +383,14 @@
     max-width: 280px;
   }
 
+  .about-profile-showcase,
+  .about-mission,
+  .about-values,
+  .about-clients {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .profile-stats {
     gap: 1rem;
   }
@@ -437,6 +445,8 @@
   .about-values,
   .about-clients {
     padding: 60px 0;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .profile-showcase-grid {
