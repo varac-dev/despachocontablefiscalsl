@@ -747,6 +747,12 @@
     grid-column: span 1 !important;
     grid-row: auto !important;
   }
+
+  /* Ocultar métricas e info cards en mobile, mostrar solo servicios */
+  .metric-card,
+  .info-card {
+    display: none !important;
+  }
 }
 
 /* Ajustes adicionales para mobile */
