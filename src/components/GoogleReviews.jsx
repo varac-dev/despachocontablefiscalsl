@@ -40,36 +40,8 @@ const GoogleReviews = () => {
           slidesToScroll: 1,
           arrows: false,
           dots: true,
-          centerMode: true,
-          centerPadding: '20px'
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
           centerMode: false,
-          adaptiveHeight: true,
-          variableWidth: false,
-          swipe: true,
-          touchMove: true
-        }
-      },
-      {
-        breakpoint: 390,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-          centerMode: false,
-          adaptiveHeight: true,
-          variableWidth: false,
-          swipe: true,
-          touchMove: true
+          adaptiveHeight: true
         }
       }
     ]

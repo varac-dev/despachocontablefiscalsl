@@ -349,7 +349,7 @@
   }
 
   .reviews-slider-container {
-    padding: 0 15px;
+    padding: 0 20px;
     margin-bottom: 40px;
   }
 
@@ -358,8 +358,23 @@
     padding: 5px 0;
   }
 
+  .reviews-slider-container .slick-track {
+    display: flex !important;
+  }
+
+  .reviews-slider-container .slick-slide {
+    width: 100% !important;
+    float: none !important;
+  }
+
   .slider-item {
-    padding: 0 8px;
+    padding: 0 10px;
+    width: 100% !important;
+  }
+
+  .review-card {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   /* Ocultar flechas en mobile */
