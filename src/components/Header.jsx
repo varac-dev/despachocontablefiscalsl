@@ -16,11 +16,6 @@ const Header = ({ onContactClick }) => {
     e.preventDefault();
     closeMenu();
 
-    if (targetId === '#contacto') {
-      onContactClick();
-      return;
-    }
-
     const target = document.querySelector(targetId);
     if (target) {
       const headerHeight = 70;
@@ -67,9 +62,9 @@ const Header = ({ onContactClick }) => {
         </div>
 
         {/* CTA Button */}
-        <a href="#contacto" onClick={(e) => handleNavClick(e, '#contacto')} className="cta-button">
+        <button onClick={onContactClick} className="cta-button">
           Contáctanos
-        </a>
+        </button>
 
         {/* Mobile Menu Toggle */}
         <div className="mobile-toggle" onClick={toggleMenu}>

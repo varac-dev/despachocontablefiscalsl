@@ -336,14 +336,14 @@ const Contact = () => {
               <div className="stat-item">
                 <i className="fas fa-users"></i>
                 <div className="stat-info">
-                  <span className="stat-number">500+</span>
+                  <span className="stat-number">100+</span>
                   <span className="stat-label">Clientes satisfechos</span>
                 </div>
               </div>
               <div className="stat-item">
-                <i className="fas fa-clock"></i>
+                <i className="fas fa-award"></i>
                 <div className="stat-info">
-                  <span className="stat-number">15+</span>
+                  <span className="stat-number">40+</span>
                   <span className="stat-label">Años de experiencia</span>
                 </div>
               </div>

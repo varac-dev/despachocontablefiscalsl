@@ -25,7 +25,7 @@ const Hero = ({ onContactClick }) => {
   }, []);
 
   return (
-    <section className="hero">
+    <section id="inicio" className="hero">
       <div className={`hero-container ${isVisible ? 'visible' : ''}`}>
         <div className="hero-content">
           <h1 className="hero-title">

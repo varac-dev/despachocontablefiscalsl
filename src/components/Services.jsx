@@ -50,7 +50,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 1,
       type: 'metric',
-      number: '500+',
+      number: '100+',
       label: 'Clientes Activos',
       icon: 'fa-users'
     },
@@ -58,7 +58,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 2,
       type: 'metric',
-      number: '15+',
+      number: '40+',
       label: 'Años Experiencia',
       icon: 'fa-award'
     },
@@ -81,7 +81,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 4,
       type: 'metric',
-      number: '10K+',
+      number: '5K+',
       label: 'Registros/Mes',
       icon: 'fa-file-alt'
     },
@@ -89,8 +89,8 @@ const Services = ({ onContactClick }) => {
     {
       id: 5,
       type: 'metric',
-      number: '24/7',
-      label: 'Soporte',
+      number: 'Lun-Vie',
+      label: 'Atención',
       icon: 'fa-headset'
     },
     // Item 6: Métrica
@@ -105,7 +105,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 7,
       type: 'metric',
-      number: '$5M+',
+      number: '100%',
       label: 'Ahorro Fiscal',
       icon: 'fa-piggy-bank'
     },
@@ -136,7 +136,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 13,
       type: 'metric',
-      number: '3K+',
+      number: '1K+',
       label: 'Nóminas/Mes',
       icon: 'fa-receipt'
     },
@@ -144,7 +144,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 14,
       type: 'metric',
-      number: '< 2hrs',
+      number: '< 24hrs',
       label: 'Tiempo Respuesta',
       icon: 'fa-clock'
     },
@@ -167,7 +167,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 16,
       type: 'metric',
-      number: '12K+',
+      number: '5K+',
       label: 'Declaraciones/Año',
       icon: 'fa-file-invoice'
     },
@@ -175,7 +175,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 17,
       type: 'metric',
-      number: '200+',
+      number: '100+',
       label: 'Casos Resueltos',
       icon: 'fa-check-circle'
     },
@@ -206,7 +206,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 21,
       type: 'metric',
-      number: '150+',
+      number: '50+',
       label: 'Auditorías/Año',
       icon: 'fa-search'
     },
@@ -237,7 +237,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 25,
       type: 'metric',
-      number: '30+',
+      number: '10+',
       label: 'Especialistas',
       icon: 'fa-user-tie'
     },
@@ -261,7 +261,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 28,
       type: 'metric',
-      number: '500K+',
+      number: '50K+',
       label: 'Documentos/Año',
       icon: 'fa-file-alt'
     },
