@@ -375,18 +375,7 @@ const Services = () => {
             }
           })}
         </div>
-
-        {/* CTA Section */}
-        <div className="services-footer">
-          <div className="services-footer-content">
-            <h3>¿No encuentras lo que buscas?</h3>
-            <p>Podemos crear un paquete personalizado adaptado a tus necesidades específicas</p>
-            <button className="services-contact-button">
-              <i className="fas fa-comments"></i>
-              Contacta con un Asesor
-            </button>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
