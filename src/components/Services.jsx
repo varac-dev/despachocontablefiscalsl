@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './Services.css';
 
-const Services = () => {
+const Services = ({ onContactClick }) => {
   const [selectedService, setSelectedService] = useState(null);
   const [visibleItems, setVisibleItems] = useState(new Set());
   const itemRefs = useRef({});
@@ -365,7 +365,7 @@ const Services = () => {
                   </div>
 
                   <div className="service-cta">
-                    <button className="service-cta-button">
+                    <button className="service-cta-button" onClick={onContactClick}>
                       {item.featured ? 'Solicitar Información' : 'Más Información'}
                       <i className="fas fa-arrow-right"></i>
                     </button>

@@ -19,7 +19,7 @@ function App() {
       <Header onContactClick={openModal} />
       <Hero onContactClick={openModal} />
       <About />
-      <Services />
+      <Services onContactClick={openModal} />
       <GoogleReviews />
       <Contact />
       <Footer />
