@@ -1,0 +1,153 @@
+/* Hero Section - Apple Style */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(11, 29, 57, 0.85), rgba(26, 54, 93, 0.85)),
+              url('/business-meeting-financial-review.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.hero-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  min-height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-text {
+  display: block;
+  text-align: center;
+}
+
+.typing-cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+  color: #C6A756;
+  font-weight: 300;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #C6A756;
+  margin-bottom: 3rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.hero-cta-button {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0B1D39;
+  background: #C6A756;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(198, 167, 86, 0.3);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero-cta-button:hover {
+  background: #D4B76A;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(198, 167, 86, 0.4);
+}
+
+.hero-cta-button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+    min-height: 8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    min-height: 6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+    min-height: 5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta-button {
+    padding: 1rem 1.5rem;
+    width: auto;
+    min-width: 200px;
+  }
+}

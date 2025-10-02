@@ -4,7 +4,6 @@ import './Contact.css';
 const Contact = () => {
   const [formData, setFormData] = useState({
     nombre: '',
-    telefono: '',
     email: '',
     rfc: '',
     servicio: '',
@@ -25,7 +24,7 @@ const Contact = () => {
     e.preventDefault();
 
     // Validación básica
-    if (!formData.nombre || !formData.telefono || !formData.email || !formData.servicio) {
+    if (!formData.nombre || !formData.email || !formData.servicio) {
       setMessage({
         type: 'error',
         text: 'Por favor completa todos los campos obligatorios'
@@ -45,16 +44,46 @@ const Contact = () => {
       return;
     }
 
-    // Simular envío exitoso
+    // Crear mensaje de WhatsApp
+    const servicioNombres = {
+      'contabilidad': 'Contabilidad General',
+      'fiscal': 'Servicios Fiscales',
+      'nominas': 'Nóminas',
+      'auditoria': 'Auditorías',
+      'consultoria': 'Consultoría',
+      'paquete-integral': 'Paquete Integral',
+      'regularizacion': 'Regularización Fiscal'
+    };
+
+    let mensajeWhatsApp = `*Nueva Consulta - Despacho Contable Fiscal SL*\n\n`;
+    mensajeWhatsApp += `*Nombre:* ${formData.nombre}\n`;
+    mensajeWhatsApp += `*Email:* ${formData.email}\n`;
+    if (formData.rfc) {
+      mensajeWhatsApp += `*RFC:* ${formData.rfc}\n`;
+    }
+    mensajeWhatsApp += `*Servicio de interés:* ${servicioNombres[formData.servicio]}\n`;
+    if (formData.mensaje) {
+      mensajeWhatsApp += `\n*Mensaje:*\n${formData.mensaje}`;
+    }
+
+    // Codificar el mensaje para URL
+    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp);
+
+    // Número de WhatsApp del despacho
+    const numeroWhatsApp = '527716242330';
+
+    // Abrir WhatsApp con el mensaje
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`, '_blank');
+
+    // Mostrar mensaje de éxito
     setMessage({
       type: 'success',
-      text: '¡Gracias por tu consulta! Te contactaremos pronto.'
+      text: '¡Redirigiendo a WhatsApp! Completa el envío desde la app.'
     });
 
     // Reset form
     setFormData({
       nombre: '',
-      telefono: '',
       email: '',
       rfc: '',
       servicio: '',
@@ -106,22 +135,6 @@ const Contact = () => {
                         value={formData.nombre}
                         onChange={handleChange}
                         placeholder="Juan Pérez"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="input-group">
-                    <label htmlFor="telefono">Teléfono</label>
-                    <div className="input-wrapper">
-                      <i className="fas fa-phone"></i>
-                      <input
-                        id="telefono"
-                        type="tel"
-                        name="telefono"
-                        value={formData.telefono}
-                        onChange={handleChange}
-                        placeholder="771 123 4567"
                         required
                       />
                     </div>

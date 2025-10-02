@@ -291,6 +291,15 @@
   line-height: 1.6;
 }
 
+/* Ocultar valores 4, 5 y 6 en móvil (mostrar solo los primeros 3) */
+@media (max-width: 768px) {
+  .value-showcase-card:nth-child(4),
+  .value-showcase-card:nth-child(5),
+  .value-showcase-card:nth-child(6) {
+    display: none;
+  }
+}
+
 /* Clients Section */
 .about-clients {
   padding: 100px 0;

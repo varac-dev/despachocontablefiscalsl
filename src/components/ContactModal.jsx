@@ -5,7 +5,8 @@ const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
-    telefono: '',
+    rfc: '',
+    servicio: '',
     mensaje: ''
   });
 
@@ -18,13 +19,51 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para enviar el formulario
-    console.log('Formulario enviado:', formData);
+
+    // Validar email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Por favor ingresa un email válido');
+      return;
+    }
+
+    // Crear mensaje de WhatsApp
+    const servicioNombres = {
+      'contabilidad': 'Contabilidad General',
+      'fiscal': 'Servicios Fiscales',
+      'nominas': 'Nóminas',
+      'auditoria': 'Auditorías',
+      'consultoria': 'Consultoría',
+      'paquete-integral': 'Paquete Integral',
+      'regularizacion': 'Regularización Fiscal'
+    };
+
+    let mensajeWhatsApp = `*Nueva Consulta - Despacho Contable Fiscal SL*\n\n`;
+    mensajeWhatsApp += `*Nombre:* ${formData.nombre}\n`;
+    mensajeWhatsApp += `*Email:* ${formData.email}\n`;
+    if (formData.rfc) {
+      mensajeWhatsApp += `*RFC:* ${formData.rfc}\n`;
+    }
+    mensajeWhatsApp += `*Servicio de interés:* ${servicioNombres[formData.servicio]}\n`;
+    if (formData.mensaje) {
+      mensajeWhatsApp += `\n*Mensaje:*\n${formData.mensaje}`;
+    }
+
+    // Codificar el mensaje para URL
+    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp);
+
+    // Número de WhatsApp del despacho
+    const numeroWhatsApp = '527716242330';
+
+    // Abrir WhatsApp con el mensaje
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`, '_blank');
+
     // Resetear formulario
     setFormData({
       nombre: '',
       email: '',
-      telefono: '',
+      rfc: '',
+      servicio: '',
       mensaje: ''
     });
     onClose();
@@ -70,15 +109,35 @@ const ContactModal = ({ isOpen, onClose }) => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="telefono">Teléfono</label>
+            <label htmlFor="rfc">RFC (Opcional)</label>
             <input
-              type="tel"
-              id="telefono"
-              name="telefono"
-              value={formData.telefono}
+              type="text"
+              id="rfc"
+              name="rfc"
+              value={formData.rfc}
               onChange={handleChange}
-              placeholder="Tu teléfono"
+              placeholder="XAXX010101000"
             />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="servicio">Servicio de interés</label>
+            <select
+              id="servicio"
+              name="servicio"
+              value={formData.servicio}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Selecciona un servicio</option>
+              <option value="contabilidad">Contabilidad General</option>
+              <option value="fiscal">Servicios Fiscales</option>
+              <option value="nominas">Nóminas</option>
+              <option value="auditoria">Auditorías</option>
+              <option value="consultoria">Consultoría</option>
+              <option value="paquete-integral">Paquete Integral</option>
+              <option value="regularizacion">Regularización Fiscal</option>
+            </select>
           </div>
 
           <div className="form-group">

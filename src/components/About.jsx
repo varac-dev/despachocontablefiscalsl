@@ -5,9 +5,7 @@ import ContactModal from './ContactModal';
 const About = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [typedText, setTypedText] = useState('');
   const sectionRefs = useRef([]);
-  const fullText = 'Más de 40 años\nprotegiendo tu patrimonio.';
 
   useEffect(() => {
     // Ajustar threshold y rootMargin para móviles
@@ -34,23 +32,6 @@ const About = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  // Typing effect
-  useEffect(() => {
-    if (!visibleSections.includes('hero')) return;
-
-    let currentIndex = 0;
-    const typingInterval = setInterval(() => {
-      if (currentIndex <= fullText.length) {
-        setTypedText(fullText.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, 50);
-
-    return () => clearInterval(typingInterval);
-  }, [visibleSections]);
 
   const values = [
     {
@@ -87,37 +68,10 @@ const About = () => {
 
   return (
     <section id="nosotros" className="about">
-      {/* Hero Section - Apple Style */}
-      <div
-        className={`about-hero ${visibleSections.includes('hero') ? 'visible' : ''}`}
-        ref={(el) => (sectionRefs.current[0] = el)}
-        data-section-id="hero"
-      >
-        <div className="about-hero-content">
-          <h2 className="about-hero-title">
-            <span className="typing-text">
-              {typedText.split('\n').map((line, index) => (
-                <span key={index}>
-                  {line}
-                  {index === 0 && typedText.includes('\n') && <br />}
-                </span>
-              ))}
-              {typedText.length < fullText.length && <span className="typing-cursor">|</span>}
-            </span>
-          </h2>
-          <p className="about-hero-subtitle">
-            Excelencia fiscal que genera confianza.
-          </p>
-          <button className="hero-cta-button" onClick={() => setIsModalOpen(true)}>
-            Contáctanos
-          </button>
-        </div>
-      </div>
-
       {/* Profile Showcase */}
       <div
         className={`about-profile-showcase ${visibleSections.includes('profile') ? 'visible' : ''}`}
-        ref={(el) => (sectionRefs.current[1] = el)}
+        ref={(el) => (sectionRefs.current[0] = el)}
         data-section-id="profile"
       >
         <div className="container">
@@ -158,7 +112,7 @@ const About = () => {
       {/* Mission Statement */}
       <div
         className={`about-mission ${visibleSections.includes('mission') ? 'visible' : ''}`}
-        ref={(el) => (sectionRefs.current[2] = el)}
+        ref={(el) => (sectionRefs.current[1] = el)}
         data-section-id="mission"
       >
         <div className="container">
@@ -176,7 +130,7 @@ const About = () => {
       {/* Values Showcase - Apple Style Cards */}
       <div
         className={`about-values ${visibleSections.includes('values') ? 'visible' : ''}`}
-        ref={(el) => (sectionRefs.current[3] = el)}
+        ref={(el) => (sectionRefs.current[2] = el)}
         data-section-id="values"
       >
         <div className="container">
@@ -202,7 +156,7 @@ const About = () => {
       {/* Clients Section */}
       <div
         className={`about-clients ${visibleSections.includes('clients') ? 'visible' : ''}`}
-        ref={(el) => (sectionRefs.current[4] = el)}
+        ref={(el) => (sectionRefs.current[3] = el)}
         data-section-id="clients"
       >
         <div className="container">
