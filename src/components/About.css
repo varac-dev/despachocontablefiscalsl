@@ -371,8 +371,13 @@
 /* Responsive */
 /* Mobile First - Default styles above are for mobile */
 
-/* Extra small phones */
-@media (max-width: 374px) {
+/* Mobile phones - consolidated styles */
+@media (max-width: 480px) {
+  .about-hero {
+    min-height: 50vh;
+    background-attachment: scroll;
+  }
+
   .about-hero-content {
     padding: 2rem 1rem;
   }
@@ -386,6 +391,7 @@
   }
 
   .hero-cta-button {
+    margin-top: 1.5rem;
     padding: 0.8rem 1.8rem;
     font-size: 1rem;
     width: 100%;
@@ -396,24 +402,77 @@
   .about-mission,
   .about-values,
   .about-clients {
+    padding: 60px 0;
     opacity: 1;
     transform: translateY(0);
   }
 
+  .profile-showcase-grid {
+    gap: 2rem;
+  }
+
+  .profile-showcase-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-showcase-image img {
+    width: 85%;
+    max-width: 320px;
+  }
+
+  .profile-showcase-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .profile-showcase-content h3 {
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .profile-title {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-description {
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
   .profile-stats {
+    grid-template-columns: 1fr;
     gap: 1rem;
+    max-width: 100%;
   }
 
   .stat-item {
-    padding: 1rem;
+    padding: 1.25rem;
+    width: 100%;
   }
 
   .stat-number {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .stat-label {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .mission-content p {
+    font-size: 1rem;
+  }
+
+  .values-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .value-showcase-card {
@@ -427,75 +486,6 @@
 
   .value-icon-wrapper i {
     font-size: 1.8rem;
-  }
-
-  .client-type {
-    padding: 2rem 1.5rem;
-  }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-  .about-hero {
-    min-height: 50vh;
-    background-attachment: scroll;
-  }
-
-  .about-hero-content {
-    padding: 3rem 1.5rem;
-  }
-
-  .hero-cta-button {
-    margin-top: 1.5rem;
-  }
-
-  .about-profile-showcase,
-  .about-mission,
-  .about-values,
-  .about-clients {
-    padding: 60px 0;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .profile-showcase-grid {
-    gap: 2.5rem;
-  }
-
-  .profile-showcase-content h3 {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .profile-title {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  .profile-description {
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  .profile-stats {
-    gap: 1rem;
-  }
-
-  .stat-item {
-    padding: 1rem 0.5rem;
-  }
-
-  .mission-content p {
-    font-size: 1rem;
-  }
-
-  .values-title {
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .value-showcase-card {
-    padding: 2rem 1.5rem;
   }
 
   .value-showcase-card h4 {
@@ -512,7 +502,7 @@
   }
 
   .client-type {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .client-type i {
