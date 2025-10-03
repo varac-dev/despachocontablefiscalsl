@@ -43,9 +43,10 @@ function Post() {
     return (
       <div className="post-page">
         <div className="post-error">
-          <h1>⚠️ Error</h1>
+          <div className="error-icon">⚠️</div>
+          <h1>Error al cargar</h1>
           <p>{error}</p>
-          <Link to="/contenido" className="back-link">
+          <Link to="/contenido" className="back-button">
             ← Volver a contenido
           </Link>
         </div>
@@ -57,8 +58,10 @@ function Post() {
     return (
       <div className="post-page">
         <div className="post-error">
-          <h1>Post no encontrado</h1>
-          <Link to="/contenido" className="back-link">
+          <div className="error-icon">🔍</div>
+          <h1>Artículo no encontrado</h1>
+          <p>El artículo que buscas no existe o ha sido eliminado.</p>
+          <Link to="/contenido" className="back-button">
             ← Volver a contenido
           </Link>
         </div>
@@ -71,50 +74,89 @@ function Post() {
 
   return (
     <div className="post-page">
-      <div className="post-header">
-        <Link to="/contenido" className="back-link">
-          ← Volver a contenido
-        </Link>
-      </div>
-
-      <article className="post-article">
-        {featuredImage && (
-          <div className="post-featured-image">
-            <img src={featuredImage} alt={post.title.rendered} />
-          </div>
-        )}
-
-        <div className="post-article-content">
-          <div className="post-meta">
-            <span className="post-date">{formatDate(post.date)}</span>
+      {/* Hero Section con título y metadatos */}
+      <div
+        className="post-hero"
+        style={featuredImage ? {
+          backgroundImage: `linear-gradient(rgba(11, 29, 57, 0.7), rgba(26, 54, 93, 0.7)), url(${featuredImage})`
+        } : {}}
+      >
+        <div className="post-hero-content">
+          <div className="post-hero-meta">
+            <span className="post-hero-date">
+              📅 {formatDate(post.date)}
+            </span>
             {categories.length > 0 && (
-              <div className="post-categories">
+              <div className="post-hero-categories">
                 {categories.map((cat) => (
-                  <span key={cat.id} className="category-tag">
+                  <span key={cat.id} className="hero-category-tag">
                     {cat.name}
                   </span>
                 ))}
               </div>
             )}
           </div>
-
           <h1
-            className="post-article-title"
+            className="post-hero-title"
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           />
-
-          <div
-            className="post-article-body"
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-          />
-
-          <div className="post-footer">
-            <Link to="/contenido" className="back-button">
-              ← Volver a todos los artículos
-            </Link>
-          </div>
         </div>
-      </article>
+      </div>
+
+      {/* Contenido del artículo */}
+      <div className="post-content-wrapper">
+        <article className="post-article">
+          <div className="post-article-content">
+            {/* Navegación y compartir */}
+            <div className="post-navigation">
+              <Link to="/contenido" className="back-link">
+                ← Volver a contenido
+              </Link>
+
+              <div className="share-buttons">
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title.rendered)}&url=${window.location.href}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="share-button"
+                  title="Compartir en Twitter"
+                >
+                  𝕏
+                </a>
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="share-button"
+                  title="Compartir en LinkedIn"
+                >
+                  in
+                </a>
+                <a
+                  href={`mailto:?subject=${encodeURIComponent(post.title.rendered)}&body=${encodeURIComponent(window.location.href)}`}
+                  className="share-button"
+                  title="Compartir por email"
+                >
+                  ✉
+                </a>
+              </div>
+            </div>
+
+            {/* Contenido del post */}
+            <div
+              className="post-article-body"
+              dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+            />
+
+            {/* Footer con botón de regreso */}
+            <div className="post-footer">
+              <Link to="/contenido" className="back-button">
+                ← Volver a todos los artículos
+              </Link>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   );
 }

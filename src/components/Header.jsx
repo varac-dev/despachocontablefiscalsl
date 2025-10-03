@@ -66,11 +66,11 @@ const Header = ({ onContactClick }) => {
                 Contacto
               </a>
             </li>
-{/*            <li>
+           <li>
               <Link to="/contenido" onClick={closeMenu}>
                 Contenido
               </Link>
-            </li>*/}
+            </li>
           </ul>
         </div>
 
@@ -102,11 +102,11 @@ const Header = ({ onContactClick }) => {
                 Servicios
               </a>
             </li>
-           {/* <li>
+            <li>
               <Link to="/contenido" onClick={closeMenu}>
                 Contenido
               </Link>
-            </li>*/}
+            </li>
             <li>
               <a href="#contacto" onClick={(e) => handleNavClick(e, '#contacto')}>
                 Contacto
