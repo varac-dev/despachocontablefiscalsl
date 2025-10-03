@@ -10,6 +10,7 @@ const GoogleReviews = () => {
   const [error, setError] = useState(null);
   const [placeInfo, setPlaceInfo] = useState(null);
   const [expandedReviews, setExpandedReviews] = useState({});
+  const [isMobile, setIsMobile] = useState(false);
 
   const sliderSettings = {
     dots: true,
@@ -17,42 +18,30 @@ const GoogleReviews = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
-    arrows: true,
-    swipeToSlide: true,
-    touchThreshold: 10,
+    initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          arrows: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
           dots: true
         }
       },
       {
-        breakpoint: 900,
+        breakpoint: 600,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-          centerMode: false,
-          adaptiveHeight: false
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-          centerMode: false,
-          adaptiveHeight: false
+          slidesToScroll: 1
         }
       }
     ]
@@ -86,6 +75,19 @@ const GoogleReviews = () => {
 
     fetchReviews();
   }, []);
+
+  // Detectar si es móvil
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
 
   const renderStars = (rating) => {
     const stars = [];
@@ -172,48 +174,92 @@ const GoogleReviews = () => {
           <p>Testimonios reales de Google Business</p>
         </div>
 
-        {/* Reviews Slider */}
-        <div className="reviews-slider-container">
-          <Slider {...sliderSettings}>
-            {reviews.map((review, index) => (
-              <div key={index} className="slider-item">
-                <div className="review-card">
-                  <div className="review-header">
-                    <div className="reviewer-info">
-                      <img
-                        src={review.profile_photo_url}
-                        alt={review.author_name}
-                        className="reviewer-photo"
-                      />
-                      <div>
-                        <h4>{review.author_name}</h4>
-                        <p className="review-date">{formatDate(review.time)}</p>
+        {/* Reviews - Slider para desktop, Scroll para móvil */}
+        {!isMobile ? (
+          <div className="slider-container">
+            <Slider {...sliderSettings}>
+              {reviews.map((review, index) => (
+                <div key={index}>
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="reviewer-info">
+                        <img
+                          src={review.profile_photo_url}
+                          alt={review.author_name}
+                          className="reviewer-photo"
+                        />
+                        <div>
+                          <h4>{review.author_name}</h4>
+                          <p className="review-date">{formatDate(review.time)}</p>
+                        </div>
+                      </div>
+                      <div className="review-rating">
+                        {renderStars(review.rating)}
                       </div>
                     </div>
-                    <div className="review-rating">
-                      {renderStars(review.rating)}
+                    <div className="review-text">
+                      <p>
+                        {expandedReviews[index]
+                          ? review.text
+                          : truncateText(review.text)}
+                        {review.text.length > 150 && (
+                          <span
+                            className="read-more"
+                            onClick={() => toggleExpand(index)}
+                          >
+                            {expandedReviews[index] ? ' Ver menos' : '... Ver más'}
+                          </span>
+                        )}
+                      </p>
                     </div>
                   </div>
-                  <div className="review-text">
-                    <p>
-                      {expandedReviews[index]
-                        ? review.text
-                        : truncateText(review.text)}
-                      {review.text.length > 150 && (
-                        <span
-                          className="read-more"
-                          onClick={() => toggleExpand(index)}
-                        >
-                          {expandedReviews[index] ? ' Ver menos' : '... Ver más'}
-                        </span>
-                      )}
-                    </p>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        ) : (
+          <div className="mobile-scroll-container">
+            <div className="mobile-scroll-wrapper">
+              {reviews.map((review, index) => (
+                <div key={index} className="mobile-review-card">
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="reviewer-info">
+                        <img
+                          src={review.profile_photo_url}
+                          alt={review.author_name}
+                          className="reviewer-photo"
+                        />
+                        <div>
+                          <h4>{review.author_name}</h4>
+                          <p className="review-date">{formatDate(review.time)}</p>
+                        </div>
+                      </div>
+                      <div className="review-rating">
+                        {renderStars(review.rating)}
+                      </div>
+                    </div>
+                    <div className="review-text">
+                      <p>
+                        {expandedReviews[index]
+                          ? review.text
+                          : truncateText(review.text)}
+                        {review.text.length > 150 && (
+                          <span
+                            className="read-more"
+                            onClick={() => toggleExpand(index)}
+                          >
+                            {expandedReviews[index] ? ' Ver menos' : '... Ver más'}
+                          </span>
+                        )}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Google Link 
         <div className="reviews-footer">
