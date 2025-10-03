@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,6 +17,12 @@ const Header = ({ onContactClick }) => {
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     closeMenu();
+
+    // Si estamos en la página de contenido, redirigir a inicio y hacer scroll
+    if (location.pathname === '/contenido') {
+      window.location.href = '/' + targetId;
+      return;
+    }
 
     const target = document.querySelector(targetId);
     if (target) {
@@ -58,6 +66,11 @@ const Header = ({ onContactClick }) => {
                 Contacto
               </a>
             </li>
+{/*            <li>
+              <Link to="/contenido" onClick={closeMenu}>
+                Contenido
+              </Link>
+            </li>*/}
           </ul>
         </div>
 
@@ -89,6 +102,11 @@ const Header = ({ onContactClick }) => {
                 Servicios
               </a>
             </li>
+           {/* <li>
+              <Link to="/contenido" onClick={closeMenu}>
+                Contenido
+              </Link>
+            </li>*/}
             <li>
               <a href="#contacto" onClick={(e) => handleNavClick(e, '#contacto')}>
                 Contacto

@@ -281,8 +281,8 @@ const Contact = () => {
             <div className="card-content">
               <i className="fas fa-envelope-open-text"></i>
               <span className="email-label">Email</span>
-              <a href="mailto:contabilidadfiscal@hotmail.com" className="email-address">
-                contabilidadfiscal@hotmail.com
+              <a href="mailto:despachocontable67sl@gmail.com" className="email-address">
+                despachocontable67sl@gmail.com
               </a>
             </div>
           </div>

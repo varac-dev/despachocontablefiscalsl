@@ -901,8 +901,17 @@
   }
 
   .bento-stats .card-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .stat-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-info {
+    align-items: center;
   }
 
   .schedule-grid {

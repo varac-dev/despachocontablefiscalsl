@@ -25,7 +25,7 @@ const GoogleReviews = () => {
     touchThreshold: 10,
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -34,14 +34,25 @@ const GoogleReviews = () => {
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 900,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
           dots: true,
           centerMode: false,
-          adaptiveHeight: true
+          adaptiveHeight: false
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+          centerMode: false,
+          adaptiveHeight: false
         }
       }
     ]
