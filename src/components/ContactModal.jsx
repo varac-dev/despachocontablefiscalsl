@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './ContactModal.css';
 
-const ContactModal = ({ isOpen, onClose }) => {
+const ContactModal = ({ isOpen, onClose, selectedService }) => {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -9,6 +9,26 @@ const ContactModal = ({ isOpen, onClose }) => {
     servicio: '',
     mensaje: ''
   });
+
+  // Mapeo de nombres de servicios a valores del select
+  const serviceMapping = {
+    'Contabilidad General - Personas Morales': 'personas-morales',
+    'Contabilidad General - Personas Físicas': 'personas-fisicas',
+    'Auditoría y Defensa Fiscal': 'auditoria-defensa',
+    'Paquete de Regularización Fiscal': 'regularizacion',
+    'Consultoría Especializada': 'consultoria',
+    'Nóminas': 'nominas'
+  };
+
+  // Actualizar el servicio seleccionado cuando se reciba uno nuevo
+  useEffect(() => {
+    if (selectedService && serviceMapping[selectedService]) {
+      setFormData(prev => ({
+        ...prev,
+        servicio: serviceMapping[selectedService]
+      }));
+    }
+  }, [selectedService]);
 
   const handleChange = (e) => {
     setFormData({
@@ -29,13 +49,12 @@ const ContactModal = ({ isOpen, onClose }) => {
 
     // Crear mensaje de WhatsApp
     const servicioNombres = {
-      'contabilidad': 'Contabilidad General',
-      'fiscal': 'Servicios Fiscales',
-      'nominas': 'Nóminas',
-      'auditoria': 'Auditorías',
-      'consultoria': 'Consultoría',
-      'paquete-integral': 'Paquete Integral',
-      'regularizacion': 'Regularización Fiscal'
+      'personas-morales': 'Contabilidad General - Personas Morales',
+      'personas-fisicas': 'Contabilidad General - Personas Físicas',
+      'auditoria-defensa': 'Auditoría y Defensa Fiscal',
+      'regularizacion': 'Paquete de Regularización Fiscal',
+      'consultoria': 'Consultoría Especializada',
+      'nominas': 'Nóminas'
     };
 
     let mensajeWhatsApp = `*Nueva Consulta - Despacho Contable Fiscal SL*\n\n`;
@@ -130,13 +149,12 @@ const ContactModal = ({ isOpen, onClose }) => {
               required
             >
               <option value="">Selecciona un servicio</option>
-              <option value="contabilidad">Contabilidad General</option>
-              <option value="fiscal">Servicios Fiscales</option>
+              <option value="personas-morales">Contabilidad General - Personas Morales</option>
+              <option value="personas-fisicas">Contabilidad General - Personas Físicas</option>
+              <option value="auditoria-defensa">Auditoría y Defensa Fiscal</option>
+              <option value="regularizacion">Paquete de Regularización Fiscal</option>
+              <option value="consultoria">Consultoría Especializada</option>
               <option value="nominas">Nóminas</option>
-              <option value="auditoria">Auditorías</option>
-              <option value="consultoria">Consultoría</option>
-              <option value="paquete-integral">Paquete Integral</option>
-              <option value="regularizacion">Regularización Fiscal</option>
             </select>
           </div>
 

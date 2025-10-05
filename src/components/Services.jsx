@@ -3,8 +3,18 @@ import './Services.css';
 
 const Services = ({ onContactClick }) => {
   const [selectedService, setSelectedService] = useState(null);
+  const [modalService, setModalService] = useState(null);
+  const [showContactForm, setShowContactForm] = useState(false);
   const [visibleItems, setVisibleItems] = useState(new Set());
   const itemRefs = useRef({});
+
+  // Estado del formulario de contacto
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    rfc: '',
+    mensaje: ''
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,22 +39,165 @@ const Services = ({ onContactClick }) => {
     return () => observer.disconnect();
   }, []);
 
+  // Datos completos de servicios basados en contenido-sitio-web-v2.json
+  const servicesData = [
+    {
+      id: 'personas-morales',
+      nombre: 'Contabilidad General - Personas Morales',
+      tipo: 'destacado',
+      etiqueta: 'Más Popular',
+      icon: 'fa-building',
+      descripcion: 'Servicio mensual completo para empresas que buscan cumplimiento total y claridad financiera',
+      incluye: [
+        'Contabilidad electrónica',
+        'Presentación de declaraciones por obligaciones fiscales ante el SAT (pagos provisionales y mensuales de ISR e IVA)',
+        'Presentación de la declaración Anual y sus informativas',
+        'Presentación de la declaración de Retenciones de ISR por salarios y asimilados a salarios',
+        'Impuesto de la Retención de ISR por salarios al Estado',
+        'Presentación de la Declaración Informativa de Operaciones con Terceros (DIOT)',
+        'Entero de retenciones de IVA Mensual',
+        'Entero de retención de ISR por servicios profesionales',
+        'Entero mensual de retenciones de ISR de ingresos por arrendamiento',
+        'Asesoría laboral y de Seguro Social',
+        'Asesoría especializada',
+        'Alta Patronal en el Subdelegación',
+        'Manejo integral del Seguro Social (altas, bajas y modificaciones)',
+        'Cálculo del Salario Base de Cotización',
+        'Estados financieros',
+        'Control Interno y archivo documental',
+        'Administración del buzón tributario',
+        'Asesoría del timbrado de facturación y nóminas',
+        'Asesoría y orientación fiscal, financiera y de seguridad social',
+        'Asesoría presencial y/o telefónica ante cualquier duda o aclaración',
+        'Atención a revisiones y/o invitaciones del SAT'
+      ],
+      beneficios: [
+        'Visibilidad financiera completa mensual',
+        'Control interno robusto',
+        'Cumplimiento total de obligaciones fiscales y laborales',
+        'Gestión integral de retenciones e impuestos'
+      ]
+    },
+    {
+      id: 'personas-fisicas',
+      nombre: 'Contabilidad General - Personas Físicas',
+      tipo: 'destacado',
+      icon: 'fa-user-tie',
+      descripcion: 'Servicio mensual diseñado para profesionistas, emprendedores y personas con actividad profesional o empresarial',
+      incluye: [
+        'Presentación de declaraciones por obligaciones fiscales ante el SAT (pagos provisionales y mensuales de ISR e IVA)',
+        'Presentación de la declaración Anual',
+        'Presentación de la declaración de Retenciones de ISR por salarios y asimilados a salarios',
+        'Impuesto de la Retención de ISR por salarios al Estado',
+        'Presentación de la Declaración Informativa de Operaciones con Terceros (DIOT)',
+        'Asesoría laboral y de Seguro Social',
+        'Asesoría especializada',
+        'Alta Patronal en el Subdelegación',
+        'Manejo integral del Seguro Social (altas, bajas y modificaciones)',
+        'Cálculo del Salario Base de Cotización',
+        'Administración del buzón tributario',
+        'Asesoría en deducciones autorizadas',
+        'Asesoría y orientación fiscal, financiera y de seguridad social',
+        'Asesoría presencial y/o telefónica ante cualquier duda o aclaración',
+        'Atención a revisiones y/o invitaciones del SAT'
+      ],
+      beneficios: [
+        'Cumplimiento total de obligaciones fiscales',
+        'Optimización de deducciones autorizadas',
+        'Tranquilidad ante revisiones del SAT',
+        'Gestión integral del Seguro Social'
+      ]
+    },
+    {
+      id: 'auditoria-defensa',
+      nombre: 'Auditoría y Defensa Fiscal',
+      tipo: 'especializado',
+      icon: 'fa-shield-alt',
+      descripcion: 'Revisión y respaldo legal frente a auditorías e incidencias fiscales con el SAT, IMSS e INFONAVIT',
+      incluye: [
+        'Auditorías internas y externas',
+        'Revisión de declaraciones e inconsistencias',
+        'Atención a requerimientos y cartas invitación',
+        'Contestación de revisiones electrónicas',
+        'Defensa y representación legal del contribuyente',
+        'Auditoría en Seguro Social'
+      ],
+      beneficios: [
+        'Detección temprana de riesgos fiscales',
+        'Protección legal ante el SAT',
+        'Reducción de multas y recargos',
+        'Respaldo profesional en revisiones'
+      ]
+    },
+    {
+      id: 'regularizacion',
+      nombre: 'Paquete de Regularización Fiscal',
+      tipo: 'especializado',
+      icon: 'fa-check-double',
+      descripcion: 'Ideal para ponerse al corriente con el SAT y recuperar tranquilidad financiera, evitando multas',
+      incluye: [
+        'Diagnóstico fiscal completo',
+        'Corrección de declaraciones omitidas o erróneas',
+        'Actualización de obligaciones en RFC',
+        'Regularización de facturación CFDI y nómina',
+        'Gestión de opinión de cumplimiento positiva'
+      ],
+      beneficios: [
+        'Recuperación del cumplimiento fiscal',
+        'Evitar sanciones y multas',
+        'Obtención de opinión positiva del SAT',
+        'Paz mental y seguridad jurídica'
+      ]
+    },
+    {
+      id: 'consultoria',
+      nombre: 'Consultoría Especializada',
+      tipo: 'premium',
+      icon: 'fa-lightbulb',
+      descripcion: 'Blindaje fiscal y protección patrimonial con estrategias a la medida',
+      incluye: [
+        'Planeación fiscal personalizada',
+        'Protección de bienes personales y empresariales',
+        'Diseño de estructuras fiscales (holding, fideicomisos)',
+        'Estrategias de optimización de impuestos conforme la ley',
+        'Consultoría en sucesión patrimonial y herencias'
+      ],
+      beneficios: [
+        'Protección patrimonial integral',
+        'Optimización tributaria legal',
+        'Estructuras fiscales eficientes',
+        'Planeación sucesoria segura'
+      ]
+    },
+    {
+      id: 'nominas',
+      nombre: 'Nóminas',
+      tipo: 'operativo',
+      icon: 'fa-users-cog',
+      descripcion: 'Procesamiento completo de nómina con cumplimiento total de obligaciones laborales y fiscales',
+      incluye: [
+        'Cálculo exacto de sueldos y prestaciones',
+        'Timbrado CFDI de nómina',
+        'Cálculo de prestaciones de ley',
+        'Cumplimiento integral IMSS',
+        'Cálculo y gestión de finiquitos'
+      ],
+      beneficios: [
+        'Eliminación de errores en nómina',
+        'Cumplimiento laboral total',
+        'Empleados satisfechos',
+        'Ahorro de tiempo administrativo'
+      ]
+    }
+  ];
+
   const gridItems = [
-    // Item 0: Paquete Contabilidad Integral
+    // Item 0: Contabilidad General - Personas Morales (Más Popular)
     {
       id: 0,
       type: 'service',
-      icon: 'fa-star',
-      title: 'Paquete Contabilidad Integral',
-      description: 'Servicio mensual completo que incluye contabilidad, declaraciones y asesoría fiscal básica.',
-      benefits: [
-        'Registro de operaciones',
-        'Estados financieros mensuales',
-        'Declaraciones al día',
-        'Asesoría fiscal incluida'
-      ],
-      featured: true,
-      badge: 'Más Popular'
+      serviceId: 'personas-morales',
+      featured: true
     },
     // Item 1: Métrica
     {
@@ -62,19 +215,11 @@ const Services = ({ onContactClick }) => {
       label: 'Años Experiencia',
       icon: 'fa-award'
     },
-    // Item 3: Contabilidad General (CENTRADO)
+    // Item 3: Contabilidad General - Personas Físicas
     {
       id: 3,
       type: 'service',
-      icon: 'fa-calculator',
-      title: 'Contabilidad General',
-      description: 'Registro, clasificación y análisis de todas las operaciones financieras conforme a las NIF.',
-      benefits: [
-        'Estados financieros mensuales',
-        'Conciliaciones bancarias',
-        'Reportes para decisiones',
-        'Control de activos'
-      ],
+      serviceId: 'personas-fisicas',
       featured: false
     },
     // Item 4: Métrica
@@ -117,19 +262,11 @@ const Services = ({ onContactClick }) => {
       label: 'Cumplimiento',
       icon: 'fa-balance-scale'
     },
-    // Item 12: Servicios Fiscales
+    // Item 12: Auditoría y Defensa Fiscal
     {
       id: 12,
       type: 'service',
-      icon: 'fa-file-invoice-dollar',
-      title: 'Servicios Fiscales',
-      description: 'Asesoría y ejecución en el cumplimiento de todas tus obligaciones tributarias.',
-      benefits: [
-        'Declaraciones mensuales',
-        'Planeación fiscal',
-        'Defensa ante SAT',
-        'Optimización tributaria'
-      ],
+      serviceId: 'auditoria-defensa',
       featured: false
     },
     // Item 13: Métrica
@@ -152,15 +289,7 @@ const Services = ({ onContactClick }) => {
     {
       id: 15,
       type: 'service',
-      icon: 'fa-users-cog',
-      title: 'Nóminas',
-      description: 'Procesamiento completo de nómina con cálculo exacto de sueldos y prestaciones.',
-      benefits: [
-        'Timbrado CFDI',
-        'Cálculo prestaciones',
-        'Cumplimiento IMSS',
-        'Finiquitos'
-      ],
+      serviceId: 'nominas',
       featured: false
     },
     // Item 16: Métrica
@@ -187,19 +316,11 @@ const Services = ({ onContactClick }) => {
       label: 'Eficiencia Fiscal',
       icon: 'fa-percentage'
     },
-    // Item 20: Consultoría
+    // Item 20: Consultoría Especializada
     {
       id: 20,
       type: 'service',
-      icon: 'fa-lightbulb',
-      title: 'Consultoría Especializada',
-      description: 'Asesoría personalizada desde altas ante el SAT hasta reestructuración fiscal.',
-      benefits: [
-        'Diagnóstico integral',
-        'Estrategias personalizadas',
-        'Acompañamiento continuo',
-        'Reestructuración'
-      ],
+      serviceId: 'consultoria',
       featured: false
     },
     // Item 21: Métrica
@@ -218,19 +339,11 @@ const Services = ({ onContactClick }) => {
       label: 'Satisfacción',
       icon: 'fa-smile'
     },
-    // Item 24: Auditorías
+    // Item 24: Paquete de Regularización Fiscal
     {
       id: 24,
       type: 'service',
-      icon: 'fa-search-dollar',
-      title: 'Auditorías',
-      description: 'Auditorías preventivas y correctivas para detectar riesgos antes de revisiones externas.',
-      benefits: [
-        'Revisión contable',
-        'Matrices de riesgo',
-        'Recomendaciones',
-        'Seguimiento'
-      ],
+      serviceId: 'regularizacion',
       featured: false
     },
     // Item 25: Métrica
@@ -241,7 +354,7 @@ const Services = ({ onContactClick }) => {
       label: 'Especialistas',
       icon: 'fa-user-tie'
     },
-    // Item 26: Info Card - Experiencia (Fila 10)
+    // Item 26: Info Card - Experiencia
     {
       id: 26,
       type: 'info',
@@ -249,7 +362,7 @@ const Services = ({ onContactClick }) => {
       title: '40+ Años',
       description: 'De experiencia en el sector contable y fiscal'
     },
-    // Item 27: Info Card - Especialización (Fila 10)
+    // Item 27: Info Card - Especialización
     {
       id: 27,
       type: 'info',
@@ -257,7 +370,7 @@ const Services = ({ onContactClick }) => {
       title: 'Especialización',
       description: 'En defensa fiscal y cumplimiento tributario'
     },
-    // Item 28: Métrica (Fila 11)
+    // Item 28: Métrica
     {
       id: 28,
       type: 'metric',
@@ -265,7 +378,7 @@ const Services = ({ onContactClick }) => {
       label: 'Documentos/Año',
       icon: 'fa-file-alt'
     },
-    // Item 29: Info Card - Clientes (Fila 12)
+    // Item 29: Info Card - Clientes
     {
       id: 29,
       type: 'info',
@@ -273,7 +386,7 @@ const Services = ({ onContactClick }) => {
       title: 'Decenas de Clientes',
       description: 'Personas físicas, profesionistas y PYMES atendidas'
     },
-    // Item 30: Info Card - Confianza (Fila 12)
+    // Item 30: Info Card - Confianza
     {
       id: 30,
       type: 'info',
@@ -282,6 +395,74 @@ const Services = ({ onContactClick }) => {
       description: 'Clientes que permanecen con nosotros durante años'
     }
   ];
+
+  const handleOpenModal = (serviceId) => {
+    const service = servicesData.find(s => s.id === serviceId);
+    if (service) {
+      setModalService(service);
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const handleCloseModal = () => {
+    setModalService(null);
+    setShowContactForm(false);
+    setFormData({
+      nombre: '',
+      email: '',
+      rfc: '',
+      mensaje: ''
+    });
+    document.body.style.overflow = 'unset';
+  };
+
+  const handleModalContactClick = () => {
+    setShowContactForm(true);
+  };
+
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    // Validar email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Por favor ingresa un email válido');
+      return;
+    }
+
+    // Crear mensaje de WhatsApp
+    let mensajeWhatsApp = `*Nueva Consulta - Despacho Contable Fiscal SL*\n\n`;
+    mensajeWhatsApp += `*Nombre:* ${formData.nombre}\n`;
+    mensajeWhatsApp += `*Email:* ${formData.email}\n`;
+    if (formData.rfc) {
+      mensajeWhatsApp += `*RFC:* ${formData.rfc}\n`;
+    }
+    mensajeWhatsApp += `*Servicio de interés:* ${modalService.nombre}\n`;
+    if (formData.mensaje) {
+      mensajeWhatsApp += `\n*Mensaje:*\n${formData.mensaje}`;
+    }
+
+    // Codificar el mensaje para URL
+    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp);
+    const numeroWhatsApp = '527716242330';
+
+    // Abrir WhatsApp con el mensaje
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`, '_blank');
+
+    // Cerrar modal y resetear todo
+    handleCloseModal();
+  };
+
+  const handleBackToDetails = () => {
+    setShowContactForm(false);
+  };
 
   return (
     <section id="servicios" className="services">
@@ -330,7 +511,10 @@ const Services = ({ onContactClick }) => {
                   </div>
                 </div>
               );
-            } else {
+            } else if (item.type === 'service') {
+              const serviceData = servicesData.find(s => s.id === item.serviceId);
+              if (!serviceData) return null;
+
               return (
                 <div
                   key={item.id}
@@ -340,21 +524,21 @@ const Services = ({ onContactClick }) => {
                   ref={(el) => (itemRefs.current[item.id] = el)}
                   data-item-id={item.id}
                 >
-                  {item.badge && (
-                    <div className="service-badge">{item.badge}</div>
+                  {serviceData.etiqueta && (
+                    <div className="service-badge">{serviceData.etiqueta}</div>
                   )}
 
                   <div className="service-card-content">
                     <div className="service-icon">
-                      <i className={`fas ${item.icon}`}></i>
+                      <i className={`fas ${serviceData.icon}`}></i>
                     </div>
 
                     <div className="service-info">
-                      <h3>{item.title}</h3>
-                      <p className="service-description">{item.description}</p>
+                      <h3>{serviceData.nombre}</h3>
+                      <p className="service-description">{serviceData.descripcion}</p>
 
                       <ul className="benefits-list">
-                        {item.benefits.map((benefit, idx) => (
+                        {serviceData.beneficios.slice(0, 4).map((benefit, idx) => (
                           <li key={idx}>
                             <i className="fas fa-check-circle"></i>
                             <span>{benefit}</span>
@@ -365,18 +549,209 @@ const Services = ({ onContactClick }) => {
                   </div>
 
                   <div className="service-cta">
-                    <button className="service-cta-button" onClick={onContactClick}>
-                      {item.featured ? 'Solicitar Información' : 'Más Información'}
+                    <button
+                      className="service-cta-button"
+                      onClick={() => handleOpenModal(item.serviceId)}
+                    >
+                      Más Información
                       <i className="fas fa-arrow-right"></i>
                     </button>
                   </div>
                 </div>
               );
             }
+            return null;
           })}
         </div>
-        
       </div>
+
+      {/* Modal de Servicio */}
+      {modalService && (
+        <div className="service-modal-overlay" onClick={handleCloseModal}>
+          <div className="service-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={handleCloseModal}>
+              <i className="fas fa-times"></i>
+            </button>
+
+            {!showContactForm ? (
+              // Vista de detalles del servicio
+              <>
+                <div className="modal-header">
+                  <div className="modal-icon">
+                    <i className={`fas ${modalService.icon}`}></i>
+                  </div>
+                  <h2>{modalService.nombre}</h2>
+                  {modalService.etiqueta && (
+                    <span className="modal-badge">{modalService.etiqueta}</span>
+                  )}
+                </div>
+
+                <div className="modal-body">
+                  <p className="modal-description">{modalService.descripcion}</p>
+
+                  <div className="modal-section">
+                    <h3>
+                      <i className="fas fa-check-square"></i>
+                      ¿Qué incluye este servicio?
+                    </h3>
+                    <ul className="modal-includes-list">
+                      {modalService.incluye.map((item, idx) => (
+                        <li key={idx}>
+                          <i className="fas fa-chevron-right"></i>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="modal-section">
+                    <h3>
+                      <i className="fas fa-star"></i>
+                      Beneficios principales
+                    </h3>
+                    <div className="modal-benefits-grid">
+                      {modalService.beneficios.map((benefit, idx) => (
+                        <div key={idx} className="benefit-card">
+                          <i className="fas fa-check-circle"></i>
+                          <span>{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="modal-type-badge">
+                    Tipo de servicio: <span>{modalService.tipo}</span>
+                  </div>
+                </div>
+
+                <div className="modal-footer">
+                  <button
+                    className="modal-cta-button primary"
+                    onClick={handleModalContactClick}
+                  >
+                    Solicitar Servicio
+                    <i className="fas fa-arrow-right"></i>
+                  </button>
+                  <button
+                    className="modal-cta-button secondary"
+                    onClick={handleCloseModal}
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </>
+            ) : (
+              // Vista del formulario de contacto
+              <>
+                <div className="modal-header">
+                  <button className="modal-back-btn" onClick={handleBackToDetails}>
+                    <i className="fas fa-arrow-left"></i>
+                  </button>
+                  <div className="modal-icon">
+                    <i className={`fas ${modalService.icon}`}></i>
+                  </div>
+                  <h2>Solicitar {modalService.nombre}</h2>
+                </div>
+
+                <div className="modal-body">
+                  <p className="modal-form-subtitle">
+                    Complete el formulario y nos pondremos en contacto contigo en menos de 24 horas
+                  </p>
+
+                  <form onSubmit={handleFormSubmit} className="modal-contact-form">
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label htmlFor="nombre">
+                          <i className="fas fa-user"></i>
+                          Nombre completo *
+                        </label>
+                        <input
+                          type="text"
+                          id="nombre"
+                          name="nombre"
+                          value={formData.nombre}
+                          onChange={handleFormChange}
+                          required
+                          placeholder="Tu nombre completo"
+                        />
+                      </div>
+
+                      <div className="form-group">
+                        <label htmlFor="email">
+                          <i className="fas fa-envelope"></i>
+                          Email *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleFormChange}
+                          required
+                          placeholder="tu@email.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label htmlFor="rfc">
+                        <i className="fas fa-id-card"></i>
+                        RFC (Opcional)
+                      </label>
+                      <input
+                        type="text"
+                        id="rfc"
+                        name="rfc"
+                        value={formData.rfc}
+                        onChange={handleFormChange}
+                        placeholder="XAXX010101000"
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <label htmlFor="mensaje">
+                        <i className="fas fa-comment-dots"></i>
+                        ¿En qué podemos ayudarte?
+                      </label>
+                      <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        value={formData.mensaje}
+                        onChange={handleFormChange}
+                        rows="4"
+                        placeholder="Cuéntanos sobre tu situación actual y cómo podemos ayudarte..."
+                      ></textarea>
+                    </div>
+
+                    <div className="form-service-info">
+                      <i className="fas fa-info-circle"></i>
+                      <div>
+                        <strong>Servicio seleccionado:</strong> {modalService.nombre}
+                        <br />
+                        <small>{modalService.descripcion}</small>
+                      </div>
+                    </div>
+
+                    <div className="modal-footer">
+                      <button type="submit" className="modal-cta-button primary">
+                        <i className="fab fa-whatsapp"></i>
+                        Enviar por WhatsApp
+                      </button>
+                      <button
+                        type="button"
+                        className="modal-cta-button secondary"
+                        onClick={handleBackToDetails}
+                      >
+                        Volver
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 };

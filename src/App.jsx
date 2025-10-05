@@ -13,9 +13,16 @@ import Post from './components/Post';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = (serviceName = null) => {
+    setSelectedService(serviceName);
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedService(null);
+  };
 
   // Página principal
   const HomePage = () => (
@@ -38,7 +45,11 @@ function App() {
           <Route path="/contenido/:slug" element={<Post />} />
         </Routes>
         <Footer />
-        <ContactModal isOpen={isModalOpen} onClose={closeModal} />
+        <ContactModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          selectedService={selectedService}
+        />
       </div>
     </Router>
   );

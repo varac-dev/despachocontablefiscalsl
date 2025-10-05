@@ -1,0 +1,320 @@
+{
+  "empresa": {
+    "nombre": "Despacho Contable Fiscal SL",
+    "eslogan": "Más de 40 años protegiendo tu patrimonio",
+    "descripcion_principal": "Confianza y experiencia fiscal a tu servicio desde hace más de 40 años",
+    "descripcion_detallada": "Somos un despacho contable especializado en servicios fiscales, auditorías y defensa tributaria. Brindamos soluciones personalizadas para personas físicas, profesionistas independientes y PYMES, asegurando legalmente la protección y el crecimiento del patrimonio de nuestros clientes.",
+    "mision": "Asesoría estratégica que protege y hace crecer tu patrimonio",
+    "propuesta_valor": "Soluciones integrales para todas tus necesidades contables y fiscales",
+    "experiencia": "40+ años",
+    "especialización": "Defensa fiscal y cumplimiento tributario"
+  },
+  "contacto": {
+    "telefono": {
+      "principal": "771 624 2330",
+      "whatsapp": "527716242330"
+    },
+    "emails": [
+      "despachocontable67sl@gmail.com",
+      "contabilidadfiscal@hotmail.com"
+    ],
+    "direccion": {
+      "edificio": "Torre Prisma",
+      "piso": "6",
+      "oficina": "608",
+      "calle": "Camino Real de La Plata 110",
+      "colonia": "Zona Plateada",
+      "ciudad": "Pachuca"
+    },
+    "horario": {
+      "lunes_viernes": "9:00 - 17:00",
+      "sabado": "Cerrado"
+    },
+    "redes_sociales": {
+      "instagram": "https://www.instagram.com/despachocontablefiscalSL",
+      "facebook": "https://www.facebook.com/DespachoContableFiscalSL",
+      "tiktok": "https://www.tiktok.com/@despachocontablefiscalsl"
+    },
+    "google_maps": [
+      "https://maps.app.goo.gl/Lwy1UBZ3mEJmUvYA8",
+      "https://maps.google.com/?q=Torre+Prisma+Pachuca"
+    ],
+    "tiempo_respuesta": "Menos de 24 horas"
+  },
+  "personal": {
+    "soraida_nicole": {
+      "nombre": "Soraida Nicole",
+      "cargo": "Contadora Fiscal Certificada",
+      "especializacion": "Contabilidad fiscal, defensa ante el SAT, auditorías y cumplimiento tributario",
+      "experiencia": "Más de cuatro décadas de experiencia",
+      "descripcion": "Ha construido un legado de confianza protegiendo el patrimonio de cientos de clientes",
+      "foto": "/Soraida-8copia.jpg"
+    }
+  },
+  "servicios": [
+    {
+      "nombre": "Paquete Contabilidad Integral",
+      "tipo": "destacado",
+      "etiqueta": "Más Popular",
+      "descripcion": "Servicio mensual completo",
+      "incluye": [
+        "Registro de operaciones",
+        "Estados financieros mensuales",
+        "Declaraciones al día",
+        "Asesoría fiscal incluida"
+      ]
+    },
+    {
+      "nombre": "Contabilidad General",
+      "descripcion": "Registro, clasificación y análisis de todas las operaciones financieras conforme a las NIF",
+      "incluye": [
+        "Estados financieros mensuales",
+        "Conciliaciones bancarias",
+        "Reportes para decisiones",
+        "Control de activos"
+      ]
+    },
+    {
+      "nombre": "Servicios Fiscales",
+      "descripcion": "Asesoría y ejecución en el cumplimiento de obligaciones tributarias",
+      "incluye": [
+        "Declaraciones mensuales",
+        "Planeación fiscal",
+        "Defensa ante SAT",
+        "Optimización tributaria"
+      ]
+    },
+    {
+      "nombre": "Nóminas",
+      "descripcion": "Procesamiento completo de nómina",
+      "incluye": [
+        "Cálculo exacto de sueldos y prestaciones",
+        "Timbrado CFDI",
+        "Cálculo prestaciones",
+        "Cumplimiento IMSS",
+        "Finiquitos"
+      ]
+    },
+    {
+      "nombre": "Consultoría Especializada",
+      "descripcion": "Asesoría personalizada desde altas ante el SAT hasta reestructuración fiscal",
+      "incluye": [
+        "Diagnóstico integral",
+        "Estrategias personalizadas",
+        "Acompañamiento continuo",
+        "Reestructuración"
+      ]
+    },
+    {
+      "nombre": "Auditorías",
+      "descripcion": "Auditorías preventivas y correctivas. Detección de riesgos antes de revisiones externas",
+      "incluye": [
+        "Revisión contable",
+        "Matrices de riesgo",
+        "Recomendaciones",
+        "Seguimiento"
+      ]
+    },
+    {
+      "nombre": "Regularización Fiscal",
+      "descripcion": "Servicio de regularización para cumplimiento fiscal"
+    }
+  ],
+  "valores": [
+    {
+      "nombre": "Ética Profesional",
+      "descripcion": "Cumplimiento estricto de normas fiscales y transparencia absoluta"
+    },
+    {
+      "nombre": "Compromiso",
+      "descripcion": "Enfoque personalizado en el beneficio de cada cliente"
+    },
+    {
+      "nombre": "Responsabilidad",
+      "descripcion": "Entregas puntuales y seguimiento constante de obligaciones"
+    },
+    {
+      "nombre": "Cercanía",
+      "descripcion": "Comunicación directa, trato humano y accesibilidad"
+    },
+    {
+      "nombre": "Actualización",
+      "descripcion": "Capacitación continua en normativas fiscales vigentes"
+    },
+    {
+      "nombre": "Innovación",
+      "descripcion": "Soluciones fiscales creativas y eficientes adaptadas a cada negocio"
+    }
+  ],
+  "estadisticas": {
+    "experiencia": {
+      "años": "40+"
+    },
+    "clientes": {
+      "activos": "100+",
+      "historico": "500+",
+      "atendidos": "Decenas de clientes"
+    },
+    "rendimiento": {
+      "tasa_exito": "98%",
+      "satisfaccion": "95%",
+      "cumplimiento": "100%",
+      "eficiencia_fiscal": "85%",
+      "ahorro_fiscal": "100%"
+    },
+    "volumen_trabajo": {
+      "registros_mes": "5,000+",
+      "nominas_mes": "1,000+",
+      "declaraciones_año": "5,000+",
+      "documentos_año": "50,000+",
+      "auditorias_año": "50+",
+      "casos_resueltos": "100+"
+    },
+    "equipo": {
+      "especialistas": "10+"
+    }
+  },
+  "tipos_clientes": [
+    {
+      "tipo": "Personas Físicas",
+      "descripcion": "Cumplimiento fiscal y optimización tributaria personalizada"
+    },
+    {
+      "tipo": "Profesionistas",
+      "descripcion": "Soluciones especializadas para actividades profesionales"
+    },
+    {
+      "tipo": "PYMES",
+      "descripcion": "Servicios contables integrales para empresas"
+    }
+  ],
+  "navegacion": {
+    "menu_principal": [
+      {
+        "nombre": "Inicio",
+        "enlace": "#inicio"
+      },
+      {
+        "nombre": "Nosotros",
+        "enlace": "#nosotros"
+      },
+      {
+        "nombre": "Servicios",
+        "enlace": "#servicios"
+      },
+      {
+        "nombre": "Contacto",
+        "enlace": "#contacto"
+      },
+      {
+        "nombre": "Contenido",
+        "enlace": "/contenido",
+        "descripcion": "Blog de WordPress"
+      }
+    ]
+  },
+  "recursos": {
+    "imagenes": {
+      "logo": "/logo_blanco.png",
+      "foto_perfil": "/Soraida-8copia.jpg"
+    }
+  },
+  "formulario_contacto": {
+    "campos": [
+      {
+        "nombre": "nombre_completo",
+        "tipo": "texto",
+        "requerido": true
+      },
+      {
+        "nombre": "email",
+        "tipo": "email",
+        "requerido": true
+      },
+      {
+        "nombre": "rfc",
+        "tipo": "texto",
+        "requerido": false
+      },
+      {
+        "nombre": "servicio_interes",
+        "tipo": "seleccion",
+        "requerido": true,
+        "opciones": [
+          "Contabilidad General",
+          "Servicios Fiscales",
+          "Nóminas",
+          "Auditorías",
+          "Consultoría",
+          "Paquete Integral",
+          "Regularización Fiscal"
+        ]
+      },
+      {
+        "nombre": "mensaje",
+        "tipo": "texto_largo",
+        "requerido": false
+      }
+    ],
+    "metodo_envio": "WhatsApp",
+    "numero_whatsapp": "527716242330"
+  },
+  "integraciones": {
+    "google_reviews": {
+      "activo": true,
+      "api_url": "Variable de entorno VITE_API_URL",
+      "endpoint": "/api/reviews",
+      "funcionalidades": [
+        "Obtiene reseñas de Google Business en tiempo real",
+        "Muestra calificación general y número total de reseñas",
+        "Slider de reseñas en desktop",
+        "Scroll en móvil"
+      ],
+      "textos": {
+        "titulo": "Lo Que Dicen Nuestros Clientes",
+        "subtitulo": "Testimonios reales de Google Business"
+      }
+    },
+    "wordpress": {
+      "activo": true,
+      "api_url": "Variable de entorno VITE_WORDPRESS_API_URL",
+      "funcionalidades": [
+        "Muestra 12 posts por página",
+        "Sistema de categorías",
+        "Imágenes destacadas",
+        "Compartir en Twitter, LinkedIn y Email"
+      ],
+      "textos": {
+        "titulo": "Contenido",
+        "descripcion": "Artículos y recursos sobre contabilidad, fiscalidad y gestión empresarial"
+      }
+    }
+  },
+  "legal": {
+    "copyright": "© 2025 Despacho Contable Fiscal SL. Todos los derechos reservados",
+    "enlaces": [
+      {
+        "nombre": "Aviso Legal",
+        "enlace": "#aviso-legal"
+      },
+      {
+        "nombre": "Política de Privacidad",
+        "enlace": "#privacidad"
+      }
+    ]
+  },
+  "mensajes_marketing": {
+    "hero": {
+      "titulo": "Más de 40 años protegiendo tu patrimonio",
+      "subtitulo": "Excelencia fiscal que genera confianza"
+    },
+    "cta": {
+      "principal": "Tu éxito financiero comienza con una conversación",
+      "secundario": "Responderemos en menos de 24 horas"
+    },
+    "confianza": [
+      "Clientes que permanecen con nosotros durante años",
+      "Más de 40 años construyendo confianza"
+    ]
+  }
+}

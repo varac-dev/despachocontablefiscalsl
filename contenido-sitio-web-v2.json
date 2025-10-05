@@ -1,0 +1,394 @@
+{
+  "empresa": {
+    "nombre": "Despacho Contable Fiscal SL",
+    "eslogan": "Más de 40 años protegiendo tu patrimonio",
+    "descripcion_principal": "Confianza y experiencia fiscal a tu servicio desde hace más de 40 años",
+    "descripcion_detallada": "Somos un despacho contable especializado en servicios fiscales, auditorías y defensa tributaria. Brindamos soluciones personalizadas para personas físicas, profesionistas independientes y PYMES, asegurando legalmente la protección y el crecimiento del patrimonio de nuestros clientes.",
+    "mision": "Asesoría estratégica que protege y hace crecer tu patrimonio",
+    "propuesta_valor": "Soluciones integrales para todas tus necesidades contables y fiscales",
+    "experiencia": "40+ años",
+    "especialización": "Defensa fiscal y cumplimiento tributario"
+  },
+  "contacto": {
+    "telefono": {
+      "principal": "771 624 2330",
+      "whatsapp": "527716242330"
+    },
+    "emails": [
+      "despachocontable67sl@gmail.com",
+      "contabilidadfiscal@hotmail.com"
+    ],
+    "direccion": {
+      "edificio": "Torre Prisma",
+      "piso": "6",
+      "oficina": "608",
+      "calle": "Camino Real de La Plata 110",
+      "colonia": "Zona Plateada",
+      "ciudad": "Pachuca"
+    },
+    "horario": {
+      "lunes_viernes": "9:00 - 17:00",
+      "sabado": "Cerrado"
+    },
+    "redes_sociales": {
+      "instagram": "https://www.instagram.com/despachocontablefiscalSL",
+      "facebook": "https://www.facebook.com/DespachoContableFiscalSL",
+      "tiktok": "https://www.tiktok.com/@despachocontablefiscalsl"
+    },
+    "google_maps": [
+      "https://maps.app.goo.gl/Lwy1UBZ3mEJmUvYA8",
+      "https://maps.google.com/?q=Torre+Prisma+Pachuca"
+    ],
+    "tiempo_respuesta": "Menos de 24 horas"
+  },
+  "personal": {
+    "soraida_nicole": {
+      "nombre": "Soraida Nicole",
+      "cargo": "Contadora Fiscal Certificada",
+      "especializacion": "Contabilidad fiscal, defensa ante el SAT, auditorías y cumplimiento tributario",
+      "experiencia": "Más de cuatro décadas de experiencia",
+      "descripcion": "Ha construido un legado de confianza protegiendo el patrimonio de cientos de clientes",
+      "foto": "/Soraida-8copia.jpg"
+    }
+  },
+  "servicios": [
+    {
+      "nombre": "Contabilidad General - Personas Físicas",
+      "tipo": "destacado",
+      "categoria": "contabilidad",
+      "descripcion": "Servicio mensual diseñado para profesionistas, emprendedores y personas con actividad profesional o empresarial",
+      "incluye": [
+        "Presentación de declaraciones por obligaciones fiscales ante el SAT (pagos provisionales y mensuales de ISR e IVA)",
+        "Presentación de la declaración Anual",
+        "Presentación de la declaración de Retenciones de ISR por salarios y asimilados a salarios",
+        "Impuesto de la Retención de ISR por salarios al Estado",
+        "Presentación de la Declaración Informativa de Operaciones con Terceros (DIOT)",
+        "Asesoría laboral y de Seguro Social",
+        "Asesoría especializada",
+        "Alta Patronal en el Subdelegación",
+        "Manejo integral del Seguro Social (altas, bajas y modificaciones)",
+        "Cálculo del Salario Base de Cotización",
+        "Administración del buzón tributario",
+        "Asesoría en deducciones autorizadas",
+        "Asesoría y orientación fiscal, financiera y de seguridad social",
+        "Asesoría presencial y/o telefónica ante cualquier duda o aclaración",
+        "Atención a revisiones y/o invitaciones del SAT"
+      ],
+      "beneficios": [
+        "Cumplimiento total de obligaciones fiscales",
+        "Optimización de deducciones autorizadas",
+        "Tranquilidad ante revisiones del SAT",
+        "Gestión integral del Seguro Social"
+      ]
+    },
+    {
+      "nombre": "Contabilidad General - Personas Morales",
+      "tipo": "destacado",
+      "etiqueta": "Más Popular",
+      "categoria": "contabilidad",
+      "descripcion": "Servicio mensual completo para empresas que buscan cumplimiento total y claridad financiera",
+      "incluye": [
+        "Contabilidad electrónica",
+        "Presentación de declaraciones por obligaciones fiscales ante el SAT (pagos provisionales y mensuales de ISR e IVA)",
+        "Presentación de la declaración Anual y sus informativas",
+        "Presentación de la declaración de Retenciones de ISR por salarios y asimilados a salarios",
+        "Impuesto de la Retención de ISR por salarios al Estado",
+        "Presentación de la Declaración Informativa de Operaciones con Terceros (DIOT)",
+        "Entero de retenciones de IVA Mensual",
+        "Entero de retención de ISR por servicios profesionales",
+        "Entero mensual de retenciones de ISR de ingresos por arrendamiento",
+        "Asesoría laboral y de Seguro Social",
+        "Asesoría especializada",
+        "Alta Patronal en el Subdelegación",
+        "Manejo integral del Seguro Social (altas, bajas y modificaciones)",
+        "Cálculo del Salario Base de Cotización",
+        "Estados financieros",
+        "Control Interno y archivo documental",
+        "Administración del buzón tributario",
+        "Asesoría del timbrado de facturación y nóminas",
+        "Asesoría y orientación fiscal, financiera y de seguridad social",
+        "Asesoría presencial y/o telefónica ante cualquier duda o aclaración",
+        "Atención a revisiones y/o invitaciones del SAT"
+      ],
+      "beneficios": [
+        "Visibilidad financiera completa mensual",
+        "Control interno robusto",
+        "Cumplimiento total de obligaciones fiscales y laborales",
+        "Gestión integral de retenciones e impuestos"
+      ]
+    },
+    {
+      "nombre": "Auditoría y Defensa Fiscal",
+      "tipo": "especializado",
+      "categoria": "auditoria",
+      "descripcion": "Revisión y respaldo legal frente a auditorías e incidencias fiscales con el SAT, IMSS e INFONAVIT",
+      "incluye": [
+        "Auditorías internas y externas",
+        "Revisión de declaraciones e inconsistencias",
+        "Atención a requerimientos y cartas invitación",
+        "Contestación de revisiones electrónicas",
+        "Defensa y representación legal del contribuyente",
+        "Auditoría en Seguro Social"
+      ],
+      "beneficios": [
+        "Detección temprana de riesgos fiscales",
+        "Protección legal ante el SAT",
+        "Reducción de multas y recargos",
+        "Respaldo profesional en revisiones"
+      ]
+    },
+    {
+      "nombre": "Paquete de Regularización Fiscal",
+      "tipo": "especializado",
+      "categoria": "regularizacion",
+      "descripcion": "Ideal para ponerse al corriente con el SAT y recuperar tranquilidad financiera, evitando multas",
+      "incluye": [
+        "Diagnóstico fiscal completo",
+        "Corrección de declaraciones omitidas o erróneas",
+        "Actualización de obligaciones en RFC",
+        "Regularización de facturación CFDI y nómina",
+        "Gestión de opinión de cumplimiento positiva"
+      ],
+      "beneficios": [
+        "Recuperación del cumplimiento fiscal",
+        "Evitar sanciones y multas",
+        "Obtención de opinión positiva del SAT",
+        "Paz mental y seguridad jurídica"
+      ]
+    },
+    {
+      "nombre": "Consultoría Especializada",
+      "tipo": "premium",
+      "categoria": "consultoria",
+      "descripcion": "Blindaje fiscal y protección patrimonial con estrategias a la medida",
+      "incluye": [
+        "Planeación fiscal personalizada",
+        "Protección de bienes personales y empresariales",
+        "Diseño de estructuras fiscales (holding, fideicomisos)",
+        "Estrategias de optimización de impuestos conforme la ley",
+        "Consultoría en sucesión patrimonial y herencias"
+      ],
+      "beneficios": [
+        "Protección patrimonial integral",
+        "Optimización tributaria legal",
+        "Estructuras fiscales eficientes",
+        "Planeación sucesoria segura"
+      ]
+    },
+    {
+      "nombre": "Nóminas",
+      "tipo": "operativo",
+      "categoria": "nominas",
+      "descripcion": "Procesamiento completo de nómina con cumplimiento total de obligaciones laborales y fiscales",
+      "incluye": [
+        "Cálculo exacto de sueldos y prestaciones",
+        "Timbrado CFDI de nómina",
+        "Cálculo de prestaciones de ley",
+        "Cumplimiento integral IMSS",
+        "Cálculo y gestión de finiquitos"
+      ],
+      "beneficios": [
+        "Eliminación de errores en nómina",
+        "Cumplimiento laboral total",
+        "Empleados satisfechos",
+        "Ahorro de tiempo administrativo"
+      ]
+    }
+  ],
+  "valores": [
+    {
+      "nombre": "Ética Profesional",
+      "descripcion": "Cumplimiento estricto de normas fiscales y transparencia absoluta"
+    },
+    {
+      "nombre": "Compromiso",
+      "descripcion": "Enfoque personalizado en el beneficio de cada cliente"
+    },
+    {
+      "nombre": "Responsabilidad",
+      "descripcion": "Entregas puntuales y seguimiento constante de obligaciones"
+    },
+    {
+      "nombre": "Cercanía",
+      "descripcion": "Comunicación directa, trato humano y accesibilidad"
+    },
+    {
+      "nombre": "Actualización",
+      "descripcion": "Capacitación continua en normativas fiscales vigentes"
+    },
+    {
+      "nombre": "Innovación",
+      "descripcion": "Soluciones fiscales creativas y eficientes adaptadas a cada negocio"
+    }
+  ],
+  "estadisticas": {
+    "experiencia": {
+      "años": "40+"
+    },
+    "clientes": {
+      "activos": "100+",
+      "historico": "500+",
+      "atendidos": "Decenas de clientes"
+    },
+    "rendimiento": {
+      "tasa_exito": "98%",
+      "satisfaccion": "95%",
+      "cumplimiento": "100%",
+      "eficiencia_fiscal": "85%",
+      "ahorro_fiscal": "100%"
+    },
+    "volumen_trabajo": {
+      "registros_mes": "5,000+",
+      "nominas_mes": "1,000+",
+      "declaraciones_año": "5,000+",
+      "documentos_año": "50,000+",
+      "auditorias_año": "50+",
+      "casos_resueltos": "100+"
+    },
+    "equipo": {
+      "especialistas": "10+"
+    }
+  },
+  "tipos_clientes": [
+    {
+      "tipo": "Personas Físicas",
+      "descripcion": "Cumplimiento fiscal y optimización tributaria personalizada"
+    },
+    {
+      "tipo": "Profesionistas",
+      "descripcion": "Soluciones especializadas para actividades profesionales"
+    },
+    {
+      "tipo": "PYMES",
+      "descripcion": "Servicios contables integrales para empresas"
+    }
+  ],
+  "navegacion": {
+    "menu_principal": [
+      {
+        "nombre": "Inicio",
+        "enlace": "#inicio"
+      },
+      {
+        "nombre": "Nosotros",
+        "enlace": "#nosotros"
+      },
+      {
+        "nombre": "Servicios",
+        "enlace": "#servicios"
+      },
+      {
+        "nombre": "Contacto",
+        "enlace": "#contacto"
+      },
+      {
+        "nombre": "Contenido",
+        "enlace": "/contenido",
+        "descripcion": "Blog de WordPress"
+      }
+    ]
+  },
+  "recursos": {
+    "imagenes": {
+      "logo": "/logo_blanco.png",
+      "foto_perfil": "/Soraida-8copia.jpg"
+    }
+  },
+  "formulario_contacto": {
+    "campos": [
+      {
+        "nombre": "nombre_completo",
+        "tipo": "texto",
+        "requerido": true
+      },
+      {
+        "nombre": "email",
+        "tipo": "email",
+        "requerido": true
+      },
+      {
+        "nombre": "rfc",
+        "tipo": "texto",
+        "requerido": false
+      },
+      {
+        "nombre": "servicio_interes",
+        "tipo": "seleccion",
+        "requerido": true,
+        "opciones": [
+          "Contabilidad General - Personas Físicas",
+          "Contabilidad General - Personas Morales",
+          "Auditoría y Defensa Fiscal",
+          "Paquete de Regularización Fiscal",
+          "Consultoría Especializada",
+          "Nóminas"
+        ]
+      },
+      {
+        "nombre": "mensaje",
+        "tipo": "texto_largo",
+        "requerido": false
+      }
+    ],
+    "metodo_envio": "WhatsApp",
+    "numero_whatsapp": "527716242330"
+  },
+  "integraciones": {
+    "google_reviews": {
+      "activo": true,
+      "api_url": "Variable de entorno VITE_API_URL",
+      "endpoint": "/api/reviews",
+      "funcionalidades": [
+        "Obtiene reseñas de Google Business en tiempo real",
+        "Muestra calificación general y número total de reseñas",
+        "Slider de reseñas en desktop",
+        "Scroll en móvil"
+      ],
+      "textos": {
+        "titulo": "Lo Que Dicen Nuestros Clientes",
+        "subtitulo": "Testimonios reales de Google Business"
+      }
+    },
+    "wordpress": {
+      "activo": true,
+      "api_url": "Variable de entorno VITE_WORDPRESS_API_URL",
+      "funcionalidades": [
+        "Muestra 12 posts por página",
+        "Sistema de categorías",
+        "Imágenes destacadas",
+        "Compartir en Twitter, LinkedIn y Email"
+      ],
+      "textos": {
+        "titulo": "Contenido",
+        "descripcion": "Artículos y recursos sobre contabilidad, fiscalidad y gestión empresarial"
+      }
+    }
+  },
+  "legal": {
+    "copyright": "© 2025 Despacho Contable Fiscal SL. Todos los derechos reservados",
+    "enlaces": [
+      {
+        "nombre": "Aviso Legal",
+        "enlace": "#aviso-legal"
+      },
+      {
+        "nombre": "Política de Privacidad",
+        "enlace": "#privacidad"
+      }
+    ]
+  },
+  "mensajes_marketing": {
+    "hero": {
+      "titulo": "Más de 40 años protegiendo tu patrimonio",
+      "subtitulo": "Excelencia fiscal que genera confianza"
+    },
+    "cta": {
+      "principal": "Tu éxito financiero comienza con una conversación",
+      "secundario": "Responderemos en menos de 24 horas"
+    },
+    "confianza": [
+      "Clientes que permanecen con nosotros durante años",
+      "Más de 40 años construyendo confianza"
+    ]
+  }
+}
