@@ -168,26 +168,6 @@ const Services = ({ onContactClick }) => {
         'Estructuras fiscales eficientes',
         'Planeación sucesoria segura'
       ]
-    },
-    {
-      id: 'nominas',
-      nombre: 'Nóminas',
-      tipo: 'operativo',
-      icon: 'fa-users-cog',
-      descripcion: 'Procesamiento completo de nómina con cumplimiento total de obligaciones laborales y fiscales',
-      incluye: [
-        'Cálculo exacto de sueldos y prestaciones',
-        'Timbrado CFDI de nómina',
-        'Cálculo de prestaciones de ley',
-        'Cumplimiento integral IMSS',
-        'Cálculo y gestión de finiquitos'
-      ],
-      beneficios: [
-        'Eliminación de errores en nómina',
-        'Cumplimiento laboral total',
-        'Empleados satisfechos',
-        'Ahorro de tiempo administrativo'
-      ]
     }
   ];
 
@@ -215,16 +195,16 @@ const Services = ({ onContactClick }) => {
       label: 'Años Experiencia',
       icon: 'fa-award'
     },
-    // Item 3: Contabilidad General - Personas Físicas
+    // Item 4: Contabilidad General - Personas Físicas
     {
-      id: 3,
+      id: 4,
       type: 'service',
       serviceId: 'personas-fisicas',
       featured: false
     },
-    // Item 4: Métrica
+    // Item 3: Métrica
     {
-      id: 4,
+      id: 3,
       type: 'metric',
       number: '5K+',
       label: 'Registros/Mes',
@@ -254,145 +234,107 @@ const Services = ({ onContactClick }) => {
       label: 'Ahorro Fiscal',
       icon: 'fa-piggy-bank'
     },
-    // Item 11: Métrica
+    // Item 8: Métrica
     {
-      id: 11,
+      id: 8,
       type: 'metric',
       number: '100%',
       label: 'Cumplimiento',
       icon: 'fa-balance-scale'
     },
-    // Item 12: Auditoría y Defensa Fiscal
+    // Item 9: Auditoría y Defensa Fiscal
+    {
+      id: 9,
+      type: 'service',
+      serviceId: 'auditoria-defensa',
+      featured: false
+    },
+    // Item 10: Métrica
+    {
+      id: 10,
+      type: 'metric',
+      number: '1K+',
+      label: 'Nóminas/Mes',
+      icon: 'fa-receipt'
+    },
+    // Item 11: Métrica
+    {
+      id: 11,
+      type: 'metric',
+      number: '< 24hrs',
+      label: 'Tiempo Respuesta',
+      icon: 'fa-clock'
+    },
+    // Item 12: Consultoría Especializada
     {
       id: 12,
       type: 'service',
-      serviceId: 'auditoria-defensa',
+      serviceId: 'consultoria',
       featured: false
     },
     // Item 13: Métrica
     {
       id: 13,
       type: 'metric',
-      number: '1K+',
-      label: 'Nóminas/Mes',
-      icon: 'fa-receipt'
+      number: '50+',
+      label: 'Auditorías/Año',
+      icon: 'fa-search'
     },
     // Item 14: Métrica
     {
       id: 14,
       type: 'metric',
-      number: '< 24hrs',
-      label: 'Tiempo Respuesta',
-      icon: 'fa-clock'
-    },
-    // Item 15: Nóminas
-    {
-      id: 15,
-      type: 'service',
-      serviceId: 'nominas',
-      featured: false
+      number: '95%',
+      label: 'Satisfacción',
+      icon: 'fa-smile'
     },
     // Item 16: Métrica
     {
       id: 16,
       type: 'metric',
-      number: '5K+',
-      label: 'Declaraciones/Año',
-      icon: 'fa-file-invoice'
-    },
-    // Item 17: Métrica
-    {
-      id: 17,
-      type: 'metric',
-      number: '100+',
-      label: 'Casos Resueltos',
-      icon: 'fa-check-circle'
-    },
-    // Item 19: Métrica
-    {
-      id: 19,
-      type: 'metric',
-      number: '85%',
-      label: 'Eficiencia Fiscal',
-      icon: 'fa-percentage'
-    },
-    // Item 20: Consultoría Especializada
-    {
-      id: 20,
-      type: 'service',
-      serviceId: 'consultoria',
-      featured: false
-    },
-    // Item 21: Métrica
-    {
-      id: 21,
-      type: 'metric',
-      number: '50+',
-      label: 'Auditorías/Año',
-      icon: 'fa-search'
-    },
-    // Item 23: Métrica
-    {
-      id: 23,
-      type: 'metric',
-      number: '95%',
-      label: 'Satisfacción',
-      icon: 'fa-smile'
-    },
-    // Item 24: Paquete de Regularización Fiscal
-    {
-      id: 24,
-      type: 'service',
-      serviceId: 'regularizacion',
-      featured: false
-    },
-    // Item 25: Métrica
-    {
-      id: 25,
-      type: 'metric',
       number: '10+',
       label: 'Especialistas',
       icon: 'fa-user-tie'
     },
-    // Item 26: Info Card - Experiencia
+    // Item 15: Paquete de Regularización Fiscal
     {
-      id: 26,
+      id: 15,
+      type: 'service',
+      serviceId: 'regularizacion',
+      featured: false
+    },
+
+    // Item 17: Info Card - Experiencia
+    {
+      id: 17,
       type: 'info',
       icon: 'fa-calendar-alt',
       title: '40+ Años',
       description: 'De experiencia en el sector contable y fiscal'
     },
-    // Item 27: Info Card - Especialización
+    // Item 18: Info Card - Especialización
     {
-      id: 27,
+      id: 18,
       type: 'info',
       icon: 'fa-award',
       title: 'Especialización',
       description: 'En defensa fiscal y cumplimiento tributario'
     },
-    // Item 28: Métrica
+    // Item 21: Info Card - Confianza
     {
-      id: 28,
-      type: 'metric',
-      number: '50K+',
-      label: 'Documentos/Año',
-      icon: 'fa-file-alt'
-    },
-    // Item 29: Info Card - Clientes
-    {
-      id: 29,
-      type: 'info',
-      icon: 'fa-users',
-      title: 'Decenas de Clientes',
-      description: 'Personas físicas, profesionistas y PYMES atendidas'
-    },
-    // Item 30: Info Card - Confianza
-    {
-      id: 30,
+      id: 21,
       type: 'info',
       icon: 'fa-handshake',
       title: 'Confianza',
       description: 'Clientes que permanecen con nosotros durante años'
+    },
+    // Item 22: Info Card - Clientes
+    {
+      id: 22,
+      type: 'info',
+      icon: 'fa-users',
+      title: 'Decenas de Clientes',
+      description: 'Personas físicas, profesionistas y PYMES atendidas'
     }
   ];
 
