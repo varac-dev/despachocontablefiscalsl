@@ -170,8 +170,8 @@ const About = () => {
               </div>
               <div className="client-type">
                 <i className="fas fa-briefcase"></i>
-                <h4>Profesionistas</h4>
-                <p>Soluciones especializadas para actividades profesionales</p>
+                <h4>Empresas</h4>
+                <p>Soluciones especializadas para actividades empresariales</p>
               </div>
               <div className="client-type">
                 <i className="fas fa-building"></i>
