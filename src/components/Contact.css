@@ -687,6 +687,12 @@
   border-radius: 100px;
   font-size: 0.875rem;
   font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.availability-badge.unavailable {
+  background: #fee2e2;
+  color: #991b1b;
 }
 
 .pulse {
@@ -695,6 +701,14 @@
   background: #10b981;
   border-radius: 50%;
   animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.pulse-off {
+  width: 8px;
+  height: 8px;
+  background: #dc2626;
+  border-radius: 50%;
+  opacity: 0.7;
 }
 
 @keyframes pulse-dot {

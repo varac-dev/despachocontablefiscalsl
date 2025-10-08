@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Contact.css';
 
 const Contact = () => {
@@ -11,6 +11,38 @@ const Contact = () => {
   });
 
   const [message, setMessage] = useState({ type: '', text: '' });
+  const [isAvailable, setIsAvailable] = useState(false);
+
+  // Verificar disponibilidad en tiempo real
+  useEffect(() => {
+    const checkAvailability = () => {
+      const now = new Date();
+      const day = now.getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const currentTime = hours + minutes / 60;
+
+      let available = false;
+
+      if (day >= 1 && day <= 5) {
+        // Lunes a Viernes: 9:00 - 17:00
+        available = currentTime >= 9 && currentTime < 17;
+      } else if (day === 6) {
+        // Sábado: 9:00 - 13:20
+        available = currentTime >= 9 && currentTime < 13.33; // 13:20 = 13.33 horas
+      }
+
+      setIsAvailable(available);
+    };
+
+    // Verificar inmediatamente
+    checkAvailability();
+
+    // Verificar cada minuto
+    const interval = setInterval(checkAvailability, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -299,15 +331,22 @@ const Contact = () => {
                   <span className="day">Lun - Vie</span>
                   <span className="time">9:00 - 17:00</span>
                 </div>
-                <div className="schedule-day weekend">
+                <div className="schedule-day">
                   <span className="day">Sábado</span>
-                  <span className="time">Cerrado</span>
+                  <span className="time">9:00 - 13:20</span>
                 </div>
               </div>
-              <div className="availability-badge">
-                <span className="pulse"></span>
-                <span>Disponible ahora</span>
-              </div>
+              {isAvailable ? (
+                <div className="availability-badge">
+                  <span className="pulse"></span>
+                  <span>Disponible ahora</span>
+                </div>
+              ) : (
+                <div className="availability-badge unavailable">
+                  <span className="pulse-off"></span>
+                  <span>Fuera de horario</span>
+                </div>
+              )}
             </div>
           </div>
 
