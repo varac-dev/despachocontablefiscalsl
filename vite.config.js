@@ -5,5 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   publicDir: 'public',
-  assetsInclude: ['**/*.xml', '**/*.txt']
+  assetsInclude: ['**/*.xml', '**/*.txt'],
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3001'
+    }
+  }
 })
