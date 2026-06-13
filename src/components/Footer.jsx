@@ -93,7 +93,7 @@ const Footer = () => {
           <p>&copy; 2025 Despacho Contable Fiscal SL. Todos los derechos reservados.</p>
           <div className="footer-legal">
             <a href="#aviso-legal">Aviso Legal</a>
-            <a href="#privacidad">Política de Privacidad</a>
+            <a href="/aviso-de-privacidad">Política de Privacidad</a>
           </div>
         </div>
       </div>

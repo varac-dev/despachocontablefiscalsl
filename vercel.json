@@ -43,6 +43,10 @@
       "dest": "/$1"
     },
     {
+      "src": "/aviso-de-privacidad",
+      "dest": "/aviso-de-privacidad.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
