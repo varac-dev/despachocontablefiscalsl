@@ -47,6 +47,38 @@
       "dest": "/aviso-de-privacidad.html"
     },
     {
+      "src": "/despacho-contable-en-cdmx",
+      "dest": "/despacho-contable-en-cdmx.html"
+    },
+    {
+      "src": "/despacho-contable-en-puebla",
+      "dest": "/despacho-contable-en-puebla.html"
+    },
+    {
+      "src": "/despacho-contable-en-tijuana",
+      "dest": "/despacho-contable-en-tijuana.html"
+    },
+    {
+      "src": "/despacho-contable-en-monterrey",
+      "dest": "/despacho-contable-en-monterrey.html"
+    },
+    {
+      "src": "/despacho-contable-en-queretaro",
+      "dest": "/despacho-contable-en-queretaro.html"
+    },
+    {
+      "src": "/despacho-contable-en-estado-de-mexico",
+      "dest": "/despacho-contable-en-estado-de-mexico.html"
+    },
+    {
+      "src": "/despacho-contable-en-guadalajara",
+      "dest": "/despacho-contable-en-guadalajara.html"
+    },
+    {
+      "src": "/despacho-contable-en-cancun",
+      "dest": "/despacho-contable-en-cancun.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

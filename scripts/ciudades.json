@@ -1,0 +1,96 @@
+{
+  "_comentario": "Tabla de datos del motor de páginas por ciudad. Agregar una ciudad = agregar una entrada aquí y correr scripts/generar_ciudades.py. La plantilla maestra es public/despacho-contable-en-cdmx.html (aprobada por el despacho jul-2026).",
+  "ciudades": [
+    {
+      "slug": "despacho-contable-en-puebla",
+      "nombre": "Puebla",
+      "nombre_largo": "Puebla",
+      "toda": "toda Puebla",
+      "toda_largo": "toda Puebla y su zona metropolitana",
+      "title": "Despacho Contable en Puebla | Contadores Fiscales · 40 Años",
+      "meta_desc": "Despacho contable en Puebla con 40+ años de experiencia. Contabilidad, declaraciones, regularización y defensa fiscal ante el SAT para personas físicas y PYMES poblanas. 100% a distancia.",
+      "keywords": "despacho contable puebla, contadores en puebla, despacho de contadores puebla, contabilidad puebla, defensa fiscal puebla, regularizacion fiscal puebla",
+      "og_desc": "Contabilidad, defensa fiscal ante el SAT y regularización para personas físicas y PYMES en Puebla. Más de 40 años protegiendo tu patrimonio.",
+      "lead": "¿Tienes asuntos pendientes con el SAT y no sabes por dónde empezar? Atendemos a empresas, profesionistas y personas físicas de Puebla — desde Angelópolis hasta el Centro Histórico — poniendo tu situación fiscal en orden, claro y sin complicaciones. Más de 40 años respaldándote.",
+      "cobertura": "No necesitas un despacho a la vuelta de la esquina. En México las obligaciones fiscales son <strong>federales y 100% digitales</strong> ante el SAT, así que atendemos a personas físicas, profesionistas y empresas de <strong>toda Puebla</strong> —Angelópolis, Centro Histórico, San Manuel, La Paz, San Andrés y San Pedro Cholula, y toda la zona metropolitana— a distancia, con la misma cercanía y seguimiento que si estuviéramos a un lado."
+    },
+    {
+      "slug": "despacho-contable-en-tijuana",
+      "nombre": "Tijuana",
+      "nombre_largo": "Tijuana",
+      "toda": "toda Tijuana",
+      "toda_largo": "toda Tijuana y Baja California",
+      "title": "Despacho Contable en Tijuana | Contadores Fiscales · 40 Años",
+      "meta_desc": "Despacho contable en Tijuana con 40+ años de experiencia. Contabilidad, declaraciones, regularización y defensa fiscal ante el SAT, ideal para negocios fronterizos. 100% a distancia.",
+      "keywords": "despacho contable tijuana, contadores tijuana, despacho de contadores tijuana, contabilidad tijuana, defensa fiscal tijuana, regularizacion fiscal tijuana",
+      "og_desc": "Contabilidad, defensa fiscal ante el SAT y regularización para personas físicas y PYMES en Tijuana. Más de 40 años protegiendo tu patrimonio.",
+      "lead": "¿Tienes asuntos pendientes con el SAT y no sabes por dónde empezar? Atendemos a empresas, profesionistas y personas físicas de Tijuana — de Zona Río a Otay — incluyendo negocios con operación fronteriza. Ponemos tu situación fiscal en orden, claro y sin complicaciones. Más de 40 años respaldándote.",
+      "cobertura": "No necesitas un despacho a la vuelta de la esquina. En México las obligaciones fiscales son <strong>federales y 100% digitales</strong> ante el SAT, así que atendemos a personas físicas, profesionistas y empresas de <strong>toda Tijuana</strong> —Zona Río, Zona Centro, Otay, Playas de Tijuana, La Mesa— y del resto de Baja California, a distancia, con la misma cercanía y seguimiento que si estuviéramos a un lado."
+    },
+    {
+      "slug": "despacho-contable-en-monterrey",
+      "nombre": "Monterrey",
+      "nombre_largo": "Monterrey",
+      "toda": "todo Monterrey",
+      "toda_largo": "toda el área metropolitana de Monterrey",
+      "title": "Despacho Contable en Monterrey | Contadores Fiscales · 40 Años",
+      "meta_desc": "Despacho contable en Monterrey con 40+ años de experiencia. Contabilidad, declaraciones, regularización y defensa fiscal ante el SAT para empresas y personas físicas regias. 100% a distancia.",
+      "keywords": "despacho contable monterrey, contadores monterrey, despacho de contadores monterrey, contabilidad monterrey, defensa fiscal monterrey, regularizacion fiscal monterrey",
+      "og_desc": "Contabilidad, defensa fiscal ante el SAT y regularización para personas físicas y PYMES en Monterrey. Más de 40 años protegiendo tu patrimonio.",
+      "lead": "¿Tienes asuntos pendientes con el SAT y no sabes por dónde empezar? Atendemos a empresas, profesionistas y personas físicas de Monterrey y su zona metropolitana — de San Pedro a Apodaca — poniendo tu situación fiscal en orden, claro y sin complicaciones. Más de 40 años respaldándote.",
+      "cobertura": "No necesitas un despacho a la vuelta de la esquina. En México las obligaciones fiscales son <strong>federales y 100% digitales</strong> ante el SAT, así que atendemos a personas físicas, profesionistas y empresas de <strong>todo Monterrey</strong> —San Pedro Garza García, Valle Oriente, Centro, Cumbres, San Nicolás, Guadalupe, Apodaca— a distancia, con la misma cercanía y seguimiento que si estuviéramos a un lado."
+    },
+    {
+      "slug": "despacho-contable-en-queretaro",
+      "nombre": "Querétaro",
+      "nombre_largo": "Querétaro",
+      "toda": "todo Querétaro",
+      "toda_largo": "todo Querétaro y su zona metropolitana",
+      "title": "Despacho Contable en Querétaro | Contadores Fiscales · 40 Años",
+      "meta_desc": "Despacho contable en Querétaro con 40+ años de experiencia. Contabilidad, declaraciones, regularización y defensa fiscal ante el SAT para empresas y personas físicas queretanas. 100% a distancia.",
+      "keywords": "despachos contables en queretaro, despacho contable queretaro, contadores queretaro, contabilidad queretaro, defensa fiscal queretaro, regularizacion fiscal queretaro",
+      "og_desc": "Contabilidad, defensa fiscal ante el SAT y regularización para personas físicas y PYMES en Querétaro. Más de 40 años protegiendo tu patrimonio.",
+      "lead": "¿Tienes asuntos pendientes con el SAT y no sabes por dónde empezar? Atendemos a empresas, profesionistas y personas físicas de Querétaro — de Juriquilla a Corregidora — poniendo tu situación fiscal en orden, claro y sin complicaciones. Más de 40 años respaldándote.",
+      "cobertura": "No necesitas un despacho a la vuelta de la esquina. En México las obligaciones fiscales son <strong>federales y 100% digitales</strong> ante el SAT, así que atendemos a personas físicas, profesionistas y empresas de <strong>todo Querétaro</strong> —Juriquilla, Centro Sur, Milenio III, El Refugio, Zibatá, Corregidora, San Juan del Río— a distancia, con la misma cercanía y seguimiento que si estuviéramos a un lado."
+    },
+    {
+      "slug": "despacho-contable-en-estado-de-mexico",
+      "nombre": "el Estado de México",
+      "nombre_largo": "el Estado de México",
+      "toda": "todo el Estado de México",
+      "toda_largo": "todo el Estado de México",
+      "title": "Despacho Contable en el Estado de México | Contadores · 40 Años",
+      "meta_desc": "Despacho contable en el Estado de México con 40+ años de experiencia. Contabilidad, regularización y defensa fiscal ante el SAT en Toluca, Naucalpan, Ecatepec, Cuautitlán Izcalli y más. 100% a distancia.",
+      "keywords": "despacho contable estado de mexico, despacho contable en cuautitlan izcalli, contadores ecatepec, despacho contable toluca, contadores naucalpan, defensa fiscal estado de mexico",
+      "og_desc": "Contabilidad, defensa fiscal ante el SAT y regularización para personas físicas y PYMES en el Estado de México. Más de 40 años protegiendo tu patrimonio.",
+      "lead": "¿Tienes asuntos pendientes con el SAT y no sabes por dónde empezar? Atendemos a empresas, profesionistas y personas físicas de todo el Estado de México — Toluca, Naucalpan, Ecatepec, Cuautitlán Izcalli, Satélite — poniendo tu situación fiscal en orden, claro y sin complicaciones. Más de 40 años respaldándote.",
+      "cobertura": "No necesitas un despacho a la vuelta de la esquina. En México las obligaciones fiscales son <strong>federales y 100% digitales</strong> ante el SAT, así que atendemos a personas físicas, profesionistas y empresas de <strong>todo el Estado de México</strong> —Toluca, Metepec, Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán Izcalli, Ciudad Satélite y los demás municipios— a distancia, con la misma cercanía y seguimiento que si estuviéramos a un lado. Además, estamos a solo una hora: nuestra oficina está en Pachuca."
+    },
+    {
+      "slug": "despacho-contable-en-guadalajara",
+      "nombre": "Guadalajara",
+      "nombre_largo": "Guadalajara",
+      "toda": "toda Guadalajara",
+      "toda_largo": "toda la zona metropolitana de Guadalajara",
+      "title": "Despacho Contable en Guadalajara | Contadores Fiscales · 40 Años",
+      "meta_desc": "Despacho contable en Guadalajara con 40+ años de experiencia. Contabilidad, declaraciones, regularización y defensa fiscal ante el SAT para empresas y personas físicas tapatías. 100% a distancia.",
+      "keywords": "despacho contable guadalajara, contadores guadalajara, despacho de contadores guadalajara, contabilidad guadalajara, defensa fiscal guadalajara, regularizacion fiscal guadalajara",
+      "og_desc": "Contabilidad, defensa fiscal ante el SAT y regularización para personas físicas y PYMES en Guadalajara. Más de 40 años protegiendo tu patrimonio.",
+      "lead": "¿Tienes asuntos pendientes con el SAT y no sabes por dónde empezar? Atendemos a empresas, profesionistas y personas físicas de Guadalajara y su zona metropolitana — de Zapopan a Tlaquepaque — poniendo tu situación fiscal en orden, claro y sin complicaciones. Más de 40 años respaldándote.",
+      "cobertura": "No necesitas un despacho a la vuelta de la esquina. En México las obligaciones fiscales son <strong>federales y 100% digitales</strong> ante el SAT, así que atendemos a personas físicas, profesionistas y empresas de <strong>toda Guadalajara</strong> —Zapopan, Providencia, Chapalita, Andares, Tlaquepaque, Tonalá— a distancia, con la misma cercanía y seguimiento que si estuviéramos a un lado."
+    },
+    {
+      "slug": "despacho-contable-en-cancun",
+      "nombre": "Cancún",
+      "nombre_largo": "Cancún",
+      "toda": "todo Cancún",
+      "toda_largo": "todo Cancún y la Riviera Maya",
+      "title": "Despacho Contable en Cancún | Contadores Fiscales · 40 Años",
+      "meta_desc": "Despacho contable en Cancún con 40+ años de experiencia. Contabilidad, declaraciones, regularización y defensa fiscal ante el SAT, ideal para negocios turísticos y de hospitalidad. 100% a distancia.",
+      "keywords": "despacho contable cancun, contadores cancun, despacho de contadores cancun, contabilidad cancun, defensa fiscal cancun, contadores riviera maya",
+      "og_desc": "Contabilidad, defensa fiscal ante el SAT y regularización para personas físicas y PYMES en Cancún y la Riviera Maya. Más de 40 años protegiendo tu patrimonio.",
+      "lead": "¿Tienes asuntos pendientes con el SAT y no sabes por dónde empezar? Atendemos a empresas, profesionistas y personas físicas de Cancún y la Riviera Maya — incluidos negocios turísticos, restaurantes y rentas vacacionales — poniendo tu situación fiscal en orden, claro y sin complicaciones. Más de 40 años respaldándote.",
+      "cobertura": "No necesitas un despacho a la vuelta de la esquina. En México las obligaciones fiscales son <strong>federales y 100% digitales</strong> ante el SAT, así que atendemos a personas físicas, profesionistas y empresas de <strong>todo Cancún</strong> —Centro, Zona Hotelera, Puerto Cancún— y de la Riviera Maya (Playa del Carmen, Tulum), a distancia, con la misma cercanía y seguimiento que si estuviéramos a un lado."
+    }
+  ]
+}
