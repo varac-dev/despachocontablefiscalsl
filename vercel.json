@@ -79,6 +79,10 @@
       "dest": "/despacho-contable-en-cancun.html"
     },
     {
+      "src": "/google9b700cd70812e4d2.html",
+      "dest": "/google9b700cd70812e4d2.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
