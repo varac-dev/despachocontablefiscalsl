@@ -7,7 +7,7 @@
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7BKCKVEH0"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E7BKCKVEH0');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E7BKCKVEH0');gtag('config','AW-18292051071');</script>
 
   <!-- Meta Pixel -->
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1345128883964307');fbq('track','PageView');</script>
@@ -705,6 +705,7 @@
         if(!isCall&&!isWa) return;
         var canal=isCall?'llamada':'whatsapp';
         try{ if(window.gtag) gtag('event','generate_lead',{method:canal,page_city:'Guadalajara'}); }catch(e){}
+        try{ if(window.gtag) gtag('event','conversion',{send_to:'AW-18292051071/wPIYCPyYjMwcEP-YqpJE'}); }catch(e){}
         try{ if(window.fbq) fbq('track','Lead',{content_name:'Contacto '+canal+' Guadalajara'}); }catch(e){}
       },true);
     })();
