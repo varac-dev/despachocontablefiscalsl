@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './RedesSociales.css';
 
+// Reels de Instagram del despacho. Para migrar una tarjeta a TikTok cuando
+// haya link: agregar tiktokId y el modal usará el player de TikTok.
 const REELS = [
   {
     code: 'DVKXWsbju7F',
     cover: '/redes/cover_DVKXWsbju7F.jpg',
-    video: '/redes/reel_DVKXWsbju7F.mp4',
     caption: '📢 ¡Ya inició el Programa de Regularización Fiscal 2026 del SAT!'
   },
   {
     code: 'DaoHIqUMIV1',
     cover: '/redes/cover_DaoHIqUMIV1.jpg',
-    video: '/redes/reel_DaoHIqUMIV1.mp4',
     caption: '¿Y si el SAT ya detectó un error y tú aún no lo sabes? 🚨'
   },
   {
@@ -22,13 +22,14 @@ const REELS = [
   {
     code: 'DaL-R_mO48i',
     cover: '/redes/cover_DaL-R_mO48i.jpg',
-    video: '/redes/reel_DaL-R_mO48i.mp4',
     caption: 'Pagar menos impuestos no es suerte: es estrategia fiscal'
   }
 ];
 
 const TIKTOK_URL = 'https://www.tiktok.com/@despachocontablefiscalsl';
 const INSTAGRAM_URL = 'https://www.instagram.com/despachocontablefiscalsl/';
+const WHATSAPP_URL =
+  'https://wa.me/527716242330?text=Hola%2C%20vi%20sus%20videos%20en%20la%20p%C3%A1gina%20y%20quiero%20asesor%C3%ADa';
 
 const RedesSociales = () => {
   const [activeReel, setActiveReel] = useState(null);
@@ -41,6 +42,22 @@ const RedesSociales = () => {
     const idx = Math.round(el.scrollLeft / (card.offsetWidth + 16));
     setActiveDot(Math.min(idx, REELS.length - 1));
   };
+
+  // Cerrar modal con Escape; bloquear scroll del fondo mientras está abierto
+  useEffect(() => {
+    if (!activeReel) return undefined;
+    const onKey = (e) => {
+      if (e.key === 'Escape') setActiveReel(null);
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [activeReel]);
+
+  const reelAbierto = REELS.find((r) => r.code === activeReel);
 
   return (
     <section className="redes-sociales" id="redes">
@@ -60,44 +77,23 @@ const RedesSociales = () => {
           {REELS.map((reel) => (
             <div className="redes-card" key={reel.code}>
               <div className="redes-media">
-                {activeReel === reel.code ? (
-                  reel.video ? (
-                    <video
-                      src={reel.video}
-                      poster={reel.cover}
-                      controls
-                      autoPlay
-                      playsInline
-                      preload="none"
-                    />
-                  ) : (
-                    <iframe
-                      src={`https://www.instagram.com/reel/${reel.code}/embed/`}
-                      title={reel.caption}
-                      allow="autoplay; encrypted-media"
-                      allowFullScreen
-                      loading="lazy"
-                    />
-                  )
-                ) : (
-                  <button
-                    type="button"
-                    className="redes-cover"
-                    onClick={() => setActiveReel(reel.code)}
-                    aria-label={`Reproducir video: ${reel.caption}`}
-                  >
-                    <img src={reel.cover} alt={reel.caption} loading="lazy" />
-                    <span className="redes-autor">
-                      <span className="redes-avatar">S</span>
-                      <span>
-                        <b>Soraida Nicole</b>
-                        <small>@despachocontablefiscalsl</small>
-                      </span>
+                <button
+                  type="button"
+                  className="redes-cover"
+                  onClick={() => setActiveReel(reel.code)}
+                  aria-label={`Ver video: ${reel.caption}`}
+                >
+                  <img src={reel.cover} alt={reel.caption} loading="lazy" />
+                  <span className="redes-autor">
+                    <span className="redes-avatar">S</span>
+                    <span>
+                      <b>Soraida Nicole</b>
+                      <small>@despachocontablefiscalsl</small>
                     </span>
-                    <span className="redes-play" aria-hidden="true" />
-                    <span className="redes-red-badge">Instagram</span>
-                  </button>
-                )}
+                  </span>
+                  <span className="redes-play" aria-hidden="true" />
+                  <span className="redes-red-badge">Instagram</span>
+                </button>
               </div>
               <p className="redes-caption">{reel.caption}</p>
             </div>
@@ -138,6 +134,53 @@ const RedesSociales = () => {
           </a>
         </div>
       </div>
+
+      {reelAbierto && (
+        <div
+          className="redes-modal-overlay"
+          onClick={() => setActiveReel(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={reelAbierto.caption}
+        >
+          <div className="redes-modal" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="redes-modal-cerrar"
+              onClick={() => setActiveReel(null)}
+              aria-label="Cerrar video"
+            >
+              ✕
+            </button>
+            <div className="redes-modal-video">
+              <iframe
+                src={`https://www.instagram.com/reel/${reelAbierto.code}/embed/`}
+                title={reelAbierto.caption}
+                allow="autoplay; encrypted-media; clipboard-write"
+                allowFullScreen
+              />
+            </div>
+            <div className="redes-modal-acciones">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="redes-btn redes-btn-whatsapp"
+              >
+                💬 Quiero asesoría por WhatsApp
+              </a>
+              <a
+                href={`https://www.instagram.com/reel/${reelAbierto.code}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="redes-modal-seguir"
+              >
+                Ver en Instagram y seguir a @despachocontablefiscalsl →
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
