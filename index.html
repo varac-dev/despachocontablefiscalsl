@@ -5,6 +5,14 @@
     <link rel="icon" type="image/png" href="/logo_azul.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- GA4 + Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7BKCKVEH0"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E7BKCKVEH0');gtag('config','AW-18326023556');</script>
+    <!-- Meta Pixel -->
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1345128883964307');fbq('track','PageView');</script>
+    <!-- Conversión: clic a llamar / WhatsApp (delegado, cubre todo el SPA) -->
+    <script>document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a');if(!a)return;var href=a.getAttribute('href')||'';var isCall=href.indexOf('tel:')===0,isWa=href.indexOf('wa.me')>-1||href.indexOf('api.whatsapp')>-1;if(!isCall&&!isWa)return;var canal=isCall?'llamada':'whatsapp';try{if(window.gtag)gtag('event','generate_lead',{method:canal,page_city:'Home'});}catch(e){}try{if(window.gtag)gtag('event','conversion',{send_to:isCall?'AW-18326023556/VdC5CMulj9EcEITbw6JE':'AW-18326023556/bb-nCMilj9EcEITbw6JE'});}catch(e){}try{if(window.fbq)fbq('track','Lead',{content_name:'Contacto '+canal+' Home'});}catch(e){}},true);</script>
+
     <!-- Primary Meta Tags -->
     <title>Despacho Contable Fiscal SL - Confianza y Experiencia Fiscal</title>
     <meta name="title" content="Despacho Contable Fiscal SL - Confianza y Experiencia Fiscal" />

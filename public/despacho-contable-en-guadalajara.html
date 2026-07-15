@@ -705,7 +705,7 @@
         if(!isCall&&!isWa) return;
         var canal=isCall?'llamada':'whatsapp';
         try{ if(window.gtag) gtag('event','generate_lead',{method:canal,page_city:'Guadalajara'}); }catch(e){}
-        try{ if(window.gtag) gtag('event','conversion',{send_to:'AW-18326023556/uSyQCOHvjdEcEITbw6JE'}); }catch(e){}
+        try{ if(window.gtag) gtag('event','conversion',{send_to:isCall?'AW-18326023556/VdC5CMulj9EcEITbw6JE':'AW-18326023556/bb-nCMilj9EcEITbw6JE'}); }catch(e){}
         try{ if(window.fbq) fbq('track','Lead',{content_name:'Contacto '+canal+' Guadalajara'}); }catch(e){}
       },true);
     })();
