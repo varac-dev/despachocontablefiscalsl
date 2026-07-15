@@ -149,14 +149,17 @@
 }
 
 .redes-btn-whatsapp {
-  background: #25D366;
-  color: #fff;
+  background: linear-gradient(135deg, #d4b76a 0%, #C6A756 55%, #b8963f 100%);
+  color: #0B1D39;
   width: 100%;
   justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.2px;
 }
 
 .redes-btn-whatsapp:hover {
-  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 10px 28px rgba(198, 167, 86, 0.45);
 }
 
 .redes-modal-seguir {
