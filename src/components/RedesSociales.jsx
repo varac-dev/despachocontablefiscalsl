@@ -5,11 +5,13 @@ const REELS = [
   {
     code: 'DVKXWsbju7F',
     cover: '/redes/cover_DVKXWsbju7F.jpg',
+    video: '/redes/reel_DVKXWsbju7F.mp4',
     caption: '📢 ¡Ya inició el Programa de Regularización Fiscal 2026 del SAT!'
   },
   {
     code: 'DaoHIqUMIV1',
     cover: '/redes/cover_DaoHIqUMIV1.jpg',
+    video: '/redes/reel_DaoHIqUMIV1.mp4',
     caption: '¿Y si el SAT ya detectó un error y tú aún no lo sabes? 🚨'
   },
   {
@@ -20,6 +22,7 @@ const REELS = [
   {
     code: 'DaL-R_mO48i',
     cover: '/redes/cover_DaL-R_mO48i.jpg',
+    video: '/redes/reel_DaL-R_mO48i.mp4',
     caption: 'Pagar menos impuestos no es suerte: es estrategia fiscal'
   }
 ];
@@ -58,13 +61,24 @@ const RedesSociales = () => {
             <div className="redes-card" key={reel.code}>
               <div className="redes-media">
                 {activeReel === reel.code ? (
-                  <iframe
-                    src={`https://www.instagram.com/reel/${reel.code}/embed/`}
-                    title={reel.caption}
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+                  reel.video ? (
+                    <video
+                      src={reel.video}
+                      poster={reel.cover}
+                      controls
+                      autoPlay
+                      playsInline
+                      preload="none"
+                    />
+                  ) : (
+                    <iframe
+                      src={`https://www.instagram.com/reel/${reel.code}/embed/`}
+                      title={reel.caption}
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      loading="lazy"
+                    />
+                  )
                 ) : (
                   <button
                     type="button"
