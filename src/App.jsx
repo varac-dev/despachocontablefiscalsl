@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import GoogleReviews from './components/GoogleReviews';
+import RedesSociales from './components/RedesSociales';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
@@ -31,6 +32,7 @@ function App() {
       <About />
       <Services onContactClick={openModal} />
       <GoogleReviews />
+      <RedesSociales />
       <Contact />
     </>
   );

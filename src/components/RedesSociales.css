@@ -1,0 +1,312 @@
+/* ========================================
+   SECCIÓN REDES SOCIALES (videos Soraida)
+   ======================================== */
+.redes-sociales {
+  padding: 80px 0;
+  background: #0B1D39;
+}
+
+.redes-sociales .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.redes-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.redes-badge {
+  display: inline-block;
+  background: rgba(198, 167, 86, 0.15);
+  color: #C6A756;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.redes-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.redes-gold {
+  color: #C6A756;
+}
+
+.redes-header p {
+  color: #9fb0c9;
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   CARRUSEL / GRID DE TARJETAS
+   ======================================== */
+.redes-carrusel {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.redes-card {
+  width: 260px;
+  flex: 0 0 auto;
+  background: #111;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+  text-align: left;
+}
+
+.redes-media {
+  position: relative;
+  height: 400px;
+  background: linear-gradient(160deg, #1a2c4e 0%, #0d1526 70%);
+}
+
+.redes-media iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.redes-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.redes-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.redes-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 29, 57, 0.55) 0%, rgba(11, 29, 57, 0) 35%, rgba(11, 29, 57, 0) 60%, rgba(11, 29, 57, 0.45) 100%);
+  pointer-events: none;
+}
+
+.redes-autor {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.redes-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #C6A756;
+  color: #0B1D39;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redes-autor b {
+  display: block;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.redes-autor small {
+  display: block;
+  color: #d5deec;
+  font-size: 0.68rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.redes-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(2px);
+  z-index: 2;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.redes-play::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 22px solid #fff;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+}
+
+.redes-cover:hover .redes-play {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(198, 167, 86, 0.85);
+}
+
+.redes-red-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.redes-caption {
+  margin: 0;
+  padding: 14px 16px 16px;
+  color: #e8eef8;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+/* ========================================
+   DOTS (solo móvil)
+   ======================================== */
+.redes-dots {
+  display: none;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.redes-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: all 0.25s ease;
+}
+
+.redes-dots .dot-activo {
+  width: 22px;
+  background: #C6A756;
+}
+
+/* ========================================
+   BOTONES SEGUIR
+   ======================================== */
+.redes-cta {
+  margin-top: 44px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.redes-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.redes-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(198, 167, 86, 0.35);
+}
+
+.redes-btn-solido {
+  background: #C6A756;
+  color: #0B1D39;
+}
+
+.redes-btn-borde {
+  border: 2px solid #C6A756;
+  color: #C6A756;
+  padding: 12px 30px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1120px) {
+  .redes-carrusel {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .redes-header h2 {
+    font-size: 1.9rem;
+  }
+
+  .redes-carrusel {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 16px;
+    padding: 4px 8vw 8px;
+  }
+
+  .redes-carrusel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .redes-card {
+    flex: 0 0 82%;
+    width: 82%;
+    scroll-snap-align: center;
+  }
+
+  .redes-media {
+    height: 430px;
+  }
+
+  .redes-dots {
+    display: flex;
+  }
+}
