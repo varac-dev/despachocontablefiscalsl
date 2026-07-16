@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { waSourceSuffix, waUrl } from '../lib/tracking.js';
 import './Contact.css';
 
 const Contact = () => {
@@ -99,7 +100,7 @@ const Contact = () => {
     }
 
     // Codificar el mensaje para URL
-    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp);
+    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp + waSourceSuffix());
 
     // Número de WhatsApp del despacho
     const numeroWhatsApp = '527716242330';
@@ -259,7 +260,7 @@ const Contact = () => {
               <h4>Respuesta Inmediata</h4>
               <p>¿Prefieres WhatsApp?</p>
               <a
-                href="https://wa.me/527716242330"
+                href={waUrl('Hola, quiero una asesoría')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-link"

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { waSourceSuffix, waUrl } from '../lib/tracking.js';
 import './Services.css';
 
 const Services = ({ onContactClick }) => {
@@ -392,7 +393,7 @@ const Services = ({ onContactClick }) => {
     }
 
     // Codificar el mensaje para URL
-    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp);
+    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp + waSourceSuffix());
     const numeroWhatsApp = '527716242330';
 
     // Abrir WhatsApp con el mensaje

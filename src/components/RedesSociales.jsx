@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { waUrl } from '../lib/tracking.js';
 import './RedesSociales.css';
 
 // Reels de Instagram del despacho. Para migrar una tarjeta a TikTok cuando
@@ -28,8 +29,8 @@ const REELS = [
 
 const TIKTOK_URL = 'https://www.tiktok.com/@despachocontablefiscalsl';
 const INSTAGRAM_URL = 'https://www.instagram.com/despachocontablefiscalsl/';
-const WHATSAPP_URL =
-  'https://wa.me/527716242330?text=Hola%2C%20vi%20sus%20videos%20en%20la%20p%C3%A1gina%20y%20quiero%20asesor%C3%ADa';
+const whatsappUrl = () =>
+  waUrl('Hola, vi sus videos en la página y quiero asesoría');
 
 const RedesSociales = () => {
   const [activeReel, setActiveReel] = useState(null);
@@ -162,7 +163,7 @@ const RedesSociales = () => {
             </div>
             <div className="redes-modal-acciones">
               <a
-                href={WHATSAPP_URL}
+                href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="redes-btn redes-btn-whatsapp"

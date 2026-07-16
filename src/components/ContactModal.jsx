@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { waSourceSuffix, waUrl } from '../lib/tracking.js';
 import './ContactModal.css';
 
 const ContactModal = ({ isOpen, onClose, selectedService }) => {
@@ -69,7 +70,7 @@ const ContactModal = ({ isOpen, onClose, selectedService }) => {
     }
 
     // Codificar el mensaje para URL
-    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp);
+    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp + waSourceSuffix());
 
     // Número de WhatsApp del despacho
     const numeroWhatsApp = '527716242330';
