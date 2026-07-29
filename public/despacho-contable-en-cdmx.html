@@ -696,6 +696,20 @@
       }).catch(function(){});
     })();
 
+    // Atribución: la visita de un anuncio trae ?gclid= — se guarda en
+    // sessionStorage (sobrevive la navegación interna) y el clic a WhatsApp
+    // añade al mensaje precargado la línea "Los encontré en Google" + el
+    // folio (gclid) que el bot del despacho guarda en el contacto.
+    (function(){
+      try{
+        var p=new URLSearchParams(location.search);
+        var g=p.get('gclid')||p.get('gbraid')||p.get('wbraid');
+        if(g) sessionStorage.setItem('dsp_gclid', g.slice(0,120));
+        if(g||p.get('gad_source')||p.get('utm_source')==='google') sessionStorage.setItem('dsp_src','Google');
+        else if(p.get('utm_source')) sessionStorage.setItem('dsp_src', p.get('utm_source').slice(0,24));
+      }catch(e){}
+    })();
+
     // Conversión: clic a llamar / WhatsApp → GA4 + Meta pixel (Lead)
     (function(){
       document.addEventListener('click',function(ev){
@@ -704,6 +718,13 @@
         var isCall=href.indexOf('tel:')===0, isWa=href.indexOf('wa.me')>-1||href.indexOf('api.whatsapp')>-1;
         if(!isCall&&!isWa) return;
         var canal=isCall?'llamada':'whatsapp';
+        if(isWa){try{
+          var src=sessionStorage.getItem('dsp_src'), gid=sessionStorage.getItem('dsp_gclid');
+          if(src&&href.indexOf('text=')>-1&&href.indexOf('Los%20encontr')===-1&&href.indexOf('Ref:')===-1){
+            var extra='\n\n_Los encontré en '+src+'_'+(gid?'\nRef: '+gid:'');
+            a.setAttribute('href', href+encodeURIComponent(extra));
+          }
+        }catch(e){}}
         try{ if(window.gtag) gtag('event','generate_lead',{method:canal,page_city:'CDMX'}); }catch(e){}
         try{ if(window.gtag) gtag('event','conversion',{send_to:isCall?'AW-18326023556/VdC5CMulj9EcEITbw6JE':'AW-18326023556/bb-nCMilj9EcEITbw6JE'}); }catch(e){}
         try{ if(window.fbq) fbq('track','Lead',{content_name:'Contacto '+canal+' CDMX'}); }catch(e){}
