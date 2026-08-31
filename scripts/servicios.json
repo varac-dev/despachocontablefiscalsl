@@ -1,0 +1,117 @@
+{
+  "_comentario": "Páginas de servicio (destinos de sitelinks + frente nacional SEO). Generadas por generar_servicios.py desde la plantilla maestra CDMX. Agregar un servicio = agregar entrada aquí y correr el script.",
+  "servicios": [
+    {
+      "slug": "regularizacion-fiscal-sat",
+      "nombre": "Regularización Fiscal ante el SAT",
+      "ga": "Servicio · Regularización",
+      "title": "Regularización Fiscal ante el SAT | Despacho Contable · 40 Años",
+      "meta_desc": "¿Declaraciones atrasadas o problemas con el SAT? Te regularizamos completo: diagnóstico, declaraciones omitidas y opinión de cumplimiento positiva. 100% a distancia, 40+ años de experiencia.",
+      "keywords": "regularizacion fiscal, regularizacion sat, declaraciones atrasadas, ponerse al corriente sat, opinion de cumplimiento, multas sat",
+      "og_desc": "Diagnóstico completo, declaraciones omitidas al corriente y opinión de cumplimiento positiva. Regularización fiscal 100% a distancia con 40+ años de experiencia.",
+      "eyebrow": "Regularización fiscal · 40 años de experiencia",
+      "h1_gold": "Regularización fiscal",
+      "h1_rest": " ante el SAT, sin estrés",
+      "subhead": "Te ponemos al corriente con el SAT, paso a paso y sin vueltas.",
+      "lead": "¿Dejaste declaraciones sin presentar, el SAT te marcó inconsistencias o llevas años sin mover tu RFC? Hacemos un diagnóstico completo de tu situación, corregimos lo pendiente y te ponemos al corriente — claro, legal y sin regaños. Más de 40 años respaldándote.",
+      "split_h2": "Así te regularizamos, sin que salgas de tu oficina",
+      "detalle": "Con nuestro <strong>Paquete de Regularización Fiscal</strong> revisamos tu historial completo en el SAT: declaraciones omitidas, estatus del RFC, opinión de cumplimiento y adeudos. Después corregimos y presentamos lo que falte, actualizamos tu situación y dejamos tu expediente con <strong>opinión de cumplimiento positiva</strong> — todo a distancia y con seguimiento directo de tu caso.",
+      "checks": [
+        "Diagnóstico completo de tu situación fiscal y adeudos.",
+        "Declaraciones omitidas corregidas y presentadas.",
+        "Opinión de cumplimiento positiva para evitar multas y recargos."
+      ],
+      "wa": "Hola, quiero regularizar mi situación fiscal con el SAT",
+      "faq": [
+        ["¿Qué incluye el Paquete de Regularización Fiscal?", "Un diagnóstico completo de tu situación en el SAT, la corrección y presentación de declaraciones omitidas, la actualización de tu situación en el RFC y la gestión de la opinión de cumplimiento positiva para que evites multas y recargos."],
+        ["Llevo años sin declarar, ¿aún tengo remedio?", "Sí. Es más común de lo que crees y casi siempre tiene solución. Entre más pronto se corrija, menores son los recargos. Empezamos por un diagnóstico para saber exactamente qué debes y qué conviene presentar primero."],
+        ["¿Tengo que ir a sus oficinas para regularizarme?", "No. Las obligaciones fiscales en México son federales y se gestionan ante el SAT de forma digital, así que todo el proceso es 100% a distancia, con la misma calidad y seguimiento que un cliente presencial."],
+        ["¿Con quién trato durante el proceso?", "Con Soraida Nicole, contadora fiscal titular del despacho, respaldada por una firma con más de 40 años de trayectoria. Recibes atención personal y seguimiento directo de tu caso."]
+      ]
+    },
+    {
+      "slug": "declaraciones-fiscales",
+      "nombre": "Declaraciones Mensuales y Anuales",
+      "ga": "Servicio · Declaraciones",
+      "title": "Declaraciones Mensuales y Anuales | Despacho Contable · 40 Años",
+      "meta_desc": "Presentamos tus declaraciones mensuales y anuales ante el SAT en tiempo y forma: personas físicas, profesionistas y PYMES. Sin multas ni recargos. 100% a distancia, 40+ años de experiencia.",
+      "keywords": "declaracion anual, declaracion mensual, declaracion anual sat, declaraciones fiscales, contador declaracion anual, presentar declaracion sat",
+      "og_desc": "Declaraciones mensuales y anuales presentadas en tiempo y forma, deducciones bien aplicadas y cero sorpresas con el SAT. 40+ años de experiencia.",
+      "eyebrow": "Declaraciones fiscales · 40 años de experiencia",
+      "h1_gold": "Declaraciones fiscales",
+      "h1_rest": " en tiempo y forma, sin multas",
+      "subhead": "Mensuales y anuales, presentadas bien y a tiempo — con las deducciones que sí te tocan.",
+      "lead": "¿Se te juntan las declaraciones mensuales, se acerca la anual o ya te cayó un requerimiento por no presentar? Nos encargamos de calcular, presentar y darle seguimiento a todas tus obligaciones ante el SAT, aplicando las deducciones que te corresponden. Más de 40 años respaldándote.",
+      "split_h2": "Tus declaraciones al día, sin que salgas de tu oficina",
+      "detalle": "Llevamos el calendario fiscal por ti: <strong>declaraciones mensuales</strong> (IVA, ISR, retenciones), <strong>declaración anual</strong> de personas físicas y morales, y declaraciones informativas. Calculamos con tu contabilidad real, aplicamos deducciones correctamente y presentamos en tiempo y forma para que no pagues multas, recargos ni actualizaciones — todo a distancia.",
+      "checks": [
+        "Mensuales y anuales presentadas en tiempo y forma.",
+        "Deducciones bien aplicadas: pagas lo justo, ni un peso más.",
+        "Recordatorios y seguimiento: el calendario fiscal deja de ser tu problema."
+      ],
+      "wa": "Hola, necesito ayuda con mis declaraciones fiscales",
+      "faq": [
+        ["¿Qué pasa si no presento una declaración a tiempo?", "El SAT genera multas, recargos y actualizaciones, y tu opinión de cumplimiento se vuelve negativa — lo que puede afectarte para créditos, licitaciones o facturar a ciertos clientes. Si ya se te pasó una fecha, lo corregimos cuanto antes para minimizar el costo."],
+        ["¿Me conviene la declaración anual si soy persona física?", "En muchos casos sí: si tienes deducciones personales (gastos médicos, colegiaturas, hipoteca, retiro) puedes obtener saldo a favor y el SAT te devuelve dinero. Revisamos tu caso y la presentamos por ti."],
+        ["¿Atienden a clientes de cualquier parte de México?", "Sí. Las declaraciones se presentan ante el SAT de forma digital, así que atendemos a personas físicas, profesionistas y empresas de todo el país, 100% a distancia."],
+        ["¿Con quién trato cuando contrato al despacho?", "Con Soraida Nicole, contadora fiscal titular del despacho, respaldada por una firma con más de 40 años de trayectoria. Recibes atención personal y seguimiento directo."]
+      ]
+    },
+    {
+      "slug": "defensa-fiscal",
+      "nombre": "Defensa Fiscal y Auditorías",
+      "ga": "Servicio · Defensa fiscal",
+      "title": "Defensa Fiscal y Auditorías | Despacho Contable · 40 Años",
+      "meta_desc": "¿Te llegó un requerimiento, auditoría o multa del SAT? Te defendemos: atendemos el requerimiento, armamos la respuesta y te acompañamos hasta resolverlo. 40+ años de experiencia.",
+      "keywords": "defensa fiscal, auditoria sat, requerimiento sat, multa sat que hacer, carta invitacion sat, revision sat",
+      "og_desc": "Requerimientos, cartas invitación, auditorías y multas del SAT atendidos por especialistas. Defensa fiscal con 40+ años de experiencia.",
+      "eyebrow": "Defensa fiscal · 40 años de experiencia",
+      "h1_gold": "Defensa fiscal",
+      "h1_rest": " cuando el SAT toca la puerta",
+      "subhead": "Requerimientos, auditorías y multas atendidos por especialistas — tú tranquilo.",
+      "lead": "¿Te llegó un requerimiento, una carta invitación, una revisión o una multa del SAT? No lo dejes pasar: los plazos corren y el silencio sale caro. Analizamos tu caso, armamos la respuesta correcta y te acompañamos hasta cerrarlo. Más de 40 años respaldándote.",
+      "split_h2": "Así te defendemos, sin que salgas de tu oficina",
+      "detalle": "Atendemos <strong>requerimientos y cartas invitación</strong>, acompañamos <strong>auditorías y revisiones</strong> del SAT, IMSS e INFONAVIT, y gestionamos la <strong>aclaración o reducción de multas</strong> cuando procede. Revisamos tu expediente, juntamos el soporte documental y respondemos en tiempo y forma — con estrategia, no con pánico.",
+      "checks": [
+        "Respuesta a requerimientos y cartas invitación en tiempo y forma.",
+        "Acompañamiento completo en auditorías y revisiones.",
+        "Defensa ante el SAT, IMSS e INFONAVIT con soporte documental sólido."
+      ],
+      "wa": "Hola, me llegó un requerimiento del SAT y necesito ayuda",
+      "faq": [
+        ["Me llegó un requerimiento del SAT, ¿qué hago primero?", "No lo ignores: los plazos legales corren desde la notificación. Mándanos el documento por WhatsApp, lo analizamos el mismo día y te decimos exactamente qué procede y cómo lo atendemos."],
+        ["¿Pueden reducir o quitar una multa del SAT?", "Depende del caso: hay multas que proceden aclarar, otras que se reducen por pronto pago y otras que se combaten. Revisamos el origen de la multa y te proponemos la ruta con mayor beneficio para ti."],
+        ["¿Me acompañan durante toda la auditoría?", "Sí. Desde la orden de revisión hasta el cierre: preparamos la información, atendemos los requerimientos del auditor y cuidamos que el proceso se lleve conforme a la ley."],
+        ["¿La defensa fiscal también es a distancia?", "Sí. Los trámites ante el SAT son digitales y la documentación se gestiona en línea, así que te defendemos estés donde estés en México."]
+      ]
+    },
+    {
+      "slug": "contabilidad-pymes",
+      "nombre": "Contabilidad para PyMEs y Profesionistas",
+      "ga": "Servicio · Contabilidad",
+      "title": "Contabilidad para PyMEs y Profesionistas | Despacho Contable · 40 Años",
+      "meta_desc": "Contabilidad mensual completa para PYMES, personas físicas y profesionistas: registros, impuestos, nóminas y facturación. Tu contador de confianza, 100% a distancia. 40+ años de experiencia.",
+      "keywords": "contabilidad para pymes, contador para pymes, contabilidad personas fisicas, contabilidad personas morales, servicios de contabilidad, contador en linea",
+      "og_desc": "Tu contabilidad mensual completa: registros, impuestos, nóminas y facturación para PYMES y profesionistas. 40+ años protegiendo tu patrimonio.",
+      "eyebrow": "Contabilidad integral · 40 años de experiencia",
+      "h1_gold": "Contabilidad completa",
+      "h1_rest": " para tu negocio, sin dolores de cabeza",
+      "subhead": "Registros, impuestos, nóminas y facturación — todo en orden, todos los meses.",
+      "lead": "¿Tu negocio creció y la contabilidad ya te quita tiempo (o te quita el sueño)? Nos encargamos de todo el ciclo contable y fiscal de tu PYME o actividad profesional, para que tú te dediques a vender y nosotros a que el SAT no sea problema. Más de 40 años respaldándote.",
+      "split_h2": "Tu contabilidad completa, sin que salgas de tu oficina",
+      "detalle": "Llevamos tu <strong>contabilidad mensual</strong> completa: registro de ingresos y gastos, conciliaciones, cálculo y presentación de impuestos, <strong>nóminas con timbrado CFDI</strong> y soporte en facturación electrónica. Cierres claros cada mes y visibilidad real de cómo va tu negocio — para personas físicas con actividad empresarial, profesionistas y personas morales.",
+      "checks": [
+        "Contabilidad mensual al día: registros, conciliaciones e impuestos.",
+        "Nóminas timbradas y obligaciones patronales en regla.",
+        "Cierres mensuales claros: sabes cómo va tu negocio en todo momento."
+      ],
+      "wa": "Hola, busco contador para la contabilidad de mi negocio",
+      "faq": [
+        ["¿Qué incluye el servicio de contabilidad mensual?", "Registro contable de tus operaciones, conciliaciones, cálculo y presentación de impuestos mensuales, y reportes de cierre para que sepas cómo va tu negocio. Nóminas y facturación se integran según lo que necesites."],
+        ["¿Trabajan con personas físicas y morales?", "Sí. Atendemos personas físicas con actividad empresarial, profesionistas independientes, régimen RESICO y personas morales de todos los tamaños."],
+        ["¿Cómo les comparto mi información si todo es a distancia?", "De forma digital y sencilla: facturas, estados de cuenta y documentos se comparten en línea de manera segura, y tienes comunicación directa por WhatsApp con quien lleva tu contabilidad."],
+        ["¿Con quién trato cuando contrato al despacho?", "Con Soraida Nicole, contadora fiscal titular del despacho, respaldada por una firma con más de 40 años de trayectoria. Recibes atención personal y seguimiento directo."]
+      ]
+    }
+  ]
+}

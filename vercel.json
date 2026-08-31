@@ -87,6 +87,22 @@
       "dest": "/despacho-contable-en-merida.html"
     },
     {
+      "src": "/regularizacion-fiscal-sat",
+      "dest": "/regularizacion-fiscal-sat.html"
+    },
+    {
+      "src": "/declaraciones-fiscales",
+      "dest": "/declaraciones-fiscales.html"
+    },
+    {
+      "src": "/defensa-fiscal",
+      "dest": "/defensa-fiscal.html"
+    },
+    {
+      "src": "/contabilidad-pymes",
+      "dest": "/contabilidad-pymes.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

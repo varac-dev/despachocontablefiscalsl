@@ -53,8 +53,18 @@ def dir_ciudades_html(ciudades: list[dict], excluir_slug: str) -> str:
         "<!-- dir-ciudades:inicio -->\n"
         '        <div class="footer-cities"><h4>Despacho contable en tu ciudad</h4><p>'
         + links
-        + "</p></div>\n        <!-- dir-ciudades:fin -->"
+        + "</p>" + servicios_links_html() + "</div>\n        <!-- dir-ciudades:fin -->"
     )
+
+
+def servicios_links_html() -> str:
+    """Línea 'Servicios' del directorio del footer (lee servicios.json)."""
+    sv_path = ROOT / "scripts" / "servicios.json"
+    if not sv_path.exists():
+        return ""
+    servicios = json.loads(sv_path.read_text())["servicios"]
+    links = " · ".join(f'<a href="/{s["slug"]}">{s["nombre"]}</a>' for s in servicios)
+    return f'<p class="footer-servicios"><strong>Servicios:</strong> {links}</p>'
 
 # ---------- bloques de la plantilla que se reemplazan COMPLETOS ----------
 # (anclas literales de la versión CDMX aprobada; si la plantilla cambia y un
@@ -155,12 +165,12 @@ def actualizar_vercel(slugs: list[str]):
         VERCEL.write_text(json.dumps(cfg, indent=2, ensure_ascii=False) + "\n")
 
 
-def regenerar_sitemap(slugs: list[str]):
+def regenerar_sitemap(slugs: list[str], servicios: list[str] = ()):
     hoy = datetime.date.today().isoformat()
     urls = [
         ("", "1.0", "weekly"),
         ("despacho-contable-en-cdmx", "0.9", "monthly"),
-    ] + [(s, "0.9", "monthly") for s in slugs]
+    ] + [(s, "0.9", "monthly") for s in slugs] + [(s, "0.8", "monthly") for s in servicios]
     cuerpo = "\n".join(
         f"""  <url>
     <loc>{BASE}/{path}</loc>
@@ -191,9 +201,16 @@ def main():
             destino.write_text(html)
         slugs.append(ciudad["slug"])
         print(f"✅ {ciudad['slug']}.html ({len(html):,} bytes)")
-    actualizar_vercel(slugs)
-    regenerar_sitemap(slugs)
-    print(f"✅ vercel.json: rutas al día · sitemap.xml: {len(slugs) + 2} URLs")
+    # páginas de servicio (generadas por generar_servicios.py): rutas + sitemap
+    sv_path = ROOT / "scripts" / "servicios.json"
+    servicios = (
+        [s["slug"] for s in json.loads(sv_path.read_text())["servicios"]]
+        if sv_path.exists()
+        else []
+    )
+    actualizar_vercel(slugs + servicios)
+    regenerar_sitemap(slugs, servicios)
+    print(f"✅ vercel.json: rutas al día · sitemap.xml: {len(slugs) + len(servicios) + 2} URLs")
     if CHECK_ONLY:
         print("(modo --check: no se escribió nada)")
 

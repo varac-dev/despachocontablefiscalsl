@@ -102,6 +102,13 @@ const Footer = () => {
             <a href="/despacho-contable-en-cancun">Cancún</a> ·{' '}
             <a href="/despacho-contable-en-merida">Mérida</a>
           </p>
+          <p className="footer-servicios">
+            <strong>Servicios:</strong>{' '}
+            <a href="/regularizacion-fiscal-sat">Regularización Fiscal ante el SAT</a> ·{' '}
+            <a href="/declaraciones-fiscales">Declaraciones Mensuales y Anuales</a> ·{' '}
+            <a href="/defensa-fiscal">Defensa Fiscal y Auditorías</a> ·{' '}
+            <a href="/contabilidad-pymes">Contabilidad para PyMEs y Profesionistas</a>
+          </p>
         </div>
 
         {/* Footer Bottom */}
