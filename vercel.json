@@ -83,6 +83,10 @@
       "dest": "/google9b700cd70812e4d2.html"
     },
     {
+      "src": "/despacho-contable-en-merida",
+      "dest": "/despacho-contable-en-merida.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

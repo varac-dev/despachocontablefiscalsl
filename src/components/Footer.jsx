@@ -88,6 +88,22 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Cobertura nacional: enlaces a las landings por ciudad (SEO interlinking) */}
+        <div className="footer-cities">
+          <h4>Despacho contable en tu ciudad</h4>
+          <p>
+            <a href="/despacho-contable-en-cdmx">Ciudad de México</a> ·{' '}
+            <a href="/despacho-contable-en-puebla">Puebla</a> ·{' '}
+            <a href="/despacho-contable-en-tijuana">Tijuana</a> ·{' '}
+            <a href="/despacho-contable-en-monterrey">Monterrey</a> ·{' '}
+            <a href="/despacho-contable-en-queretaro">Querétaro</a> ·{' '}
+            <a href="/despacho-contable-en-estado-de-mexico">Estado de México</a> ·{' '}
+            <a href="/despacho-contable-en-guadalajara">Guadalajara</a> ·{' '}
+            <a href="/despacho-contable-en-cancun">Cancún</a> ·{' '}
+            <a href="/despacho-contable-en-merida">Mérida</a>
+          </p>
+        </div>
+
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <p>&copy; 2025 Despacho Contable Fiscal SL. Todos los derechos reservados.</p>

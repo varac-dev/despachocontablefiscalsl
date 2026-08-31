@@ -81,6 +81,33 @@ footer .container {
   transform: translateY(-4px);
 }
 
+.footer-cities {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.2rem 0 1.5rem;
+}
+
+.footer-cities h4 {
+  color: #D4B866;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-cities p {
+  font-size: 0.9rem;
+  line-height: 1.9;
+  opacity: 0.9;
+}
+
+.footer-cities a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-cities a:hover {
+  color: #D4B866;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 2rem;

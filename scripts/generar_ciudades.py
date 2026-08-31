@@ -29,6 +29,33 @@ BASE = "https://www.despachocontablefiscal-sl.com"
 
 CHECK_ONLY = "--check" in sys.argv
 
+# ---------- directorio de ciudades (interlinking en el footer) ----------
+# El bloque vive en el master entre estos marcadores; aquí se regenera por
+# ciudad (excluyendo la propia) para que todas las landings se enlacen entre
+# sí y con CDMX. Se tokeniza ANTES de los reemplazos globales (CDMX→ciudad)
+# y se reinserta al final para que los labels/hrefs no se corrompan.
+DIR_TOKEN = "@@DIR_CIUDADES@@"
+RE_DIR = re.compile(r"<!-- dir-ciudades:inicio -->.*?<!-- dir-ciudades:fin -->", re.S)
+
+
+def _label(nombre: str) -> str:
+    return nombre[3:].strip() if nombre.startswith("el ") else nombre
+
+
+def dir_ciudades_html(ciudades: list[dict], excluir_slug: str) -> str:
+    items = [("despacho-contable-en-cdmx", "Ciudad de México")] + [
+        (c["slug"], _label(c["nombre"])) for c in ciudades
+    ]
+    links = " · ".join(
+        f'<a href="/{slug}">{label}</a>' for slug, label in items if slug != excluir_slug
+    )
+    return (
+        "<!-- dir-ciudades:inicio -->\n"
+        '        <div class="footer-cities"><h4>Despacho contable en tu ciudad</h4><p>'
+        + links
+        + "</p></div>\n        <!-- dir-ciudades:fin -->"
+    )
+
 # ---------- bloques de la plantilla que se reemplazan COMPLETOS ----------
 # (anclas literales de la versión CDMX aprobada; si la plantilla cambia y un
 #  ancla no se encuentra, el script truena con error claro en vez de generar
@@ -45,9 +72,14 @@ ANCLA_TW_TITLE = '<meta property="twitter:title" content="Despacho Contable en C
 ANCLA_TW_DESC = '<meta property="twitter:description" content="Contabilidad, defensa fiscal ante el SAT y regularización para personas físicas y PYMES en la Ciudad de México." />'
 
 
-def generar(master: str, ciudad: dict) -> str:
+def generar(master: str, ciudad: dict, dir_block: str) -> str:
     html = master
     faltantes = []
+
+    # 0) tokenizar el directorio de ciudades para protegerlo de los reemplazos
+    if not RE_DIR.search(html):
+        faltantes.append("<!-- dir-ciudades:inicio --> … <!-- dir-ciudades:fin -->")
+    html = RE_DIR.sub(DIR_TOKEN, html)
 
     def sub(ancla: str, nuevo: str):
         nonlocal html
@@ -104,6 +136,9 @@ def generar(master: str, ciudad: dict) -> str:
     restos = len(re.findall(r"CDMX|Ciudad de M", html))
     if restos:
         raise SystemExit(f"❌ {ciudad['slug']}: quedaron {restos} menciones sin sustituir")
+
+    # reinsertar el directorio de ciudades ya con la ciudad propia excluida
+    html = html.replace(DIR_TOKEN, dir_block)
     return html
 
 
@@ -150,7 +185,7 @@ def main():
     ciudades = data["ciudades"]
     slugs = []
     for ciudad in ciudades:
-        html = generar(master, ciudad)
+        html = generar(master, ciudad, dir_ciudades_html(ciudades, ciudad["slug"]))
         destino = ROOT / "public" / f"{ciudad['slug']}.html"
         if not CHECK_ONLY:
             destino.write_text(html)
